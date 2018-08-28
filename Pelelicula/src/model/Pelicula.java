@@ -30,6 +30,29 @@ public class Pelicula {
 
 	//Metodos Getters y Setters.
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pelicula [titulo=");
+		builder.append(titulo);
+		builder.append(", descripcion=");
+		builder.append(descripcion);
+		builder.append(", trailer=");
+		builder.append(trailer);
+		builder.append(", puntuacion=");
+		builder.append(puntuacion);
+		builder.append(", categoria=");
+		builder.append(categoria);
+		builder.append(", ano=");
+		builder.append(ano);
+		builder.append(", precio=");
+		builder.append(precio);
+		builder.append(", portada=");
+		builder.append(portada);
+		builder.append("]");
+		return builder.toString();
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}
