@@ -12,9 +12,6 @@
      Titulo:
     <input type="text" name="titulo">
     <br/>
-     Autor:
-    <input type="text" name="autor">
-    <br/>
      Descripción:
     <input type="text" name="descripción">
     <br/>
