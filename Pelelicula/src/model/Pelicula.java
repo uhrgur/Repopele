@@ -1,6 +1,6 @@
 package model;
 import java.util.*;
-public class Pelicula {
+public class Pelicula implements IPelicula{
 
 	private String titulo;  //Nombre de la pelicula
 	private String descripcion; //Sinopsis de la pelicula
