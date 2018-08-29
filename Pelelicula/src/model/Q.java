@@ -27,13 +27,20 @@ public class Q {
 	}
 	
 <<<<<<< HEAD
+	public String getqEliminarPelicula (String titulo) {
+=======
+<<<<<<< HEAD
 	public void QMostrar(){
 =======
 	public String getqEliminarPelicula(String titulo){
 		
 		//"SELECT titulo from peliculas;"
 >>>>>>> c0aaa5193fe6456d12721eea534c97ca1fdcba4d
+>>>>>>> 422989c85b7b256b843181f8d89d32d2594d32ed
 		
+		StringBuilder sb = new StringBuilder();
+		sb.append(titulo);
+		return sb.toString();
 	}
 	
 }
