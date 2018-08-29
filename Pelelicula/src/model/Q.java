@@ -28,11 +28,15 @@ public class Q {
 	}
 	
 
-	public void QMostrar(){
-}
+	public String QMostrar() {
+		
+		String mostrar = ("SELECT * FROM peliculas;");
+		return mostrar;
+	}
+	
 
 
-public String getqEliminarPelicula(String titulo){
+	public String getqEliminarPelicula(String titulo){
 		
 		StringBuilder sc = new StringBuilder();
 		sc.append("DELETE FROM peliculas WHERE titulo = '");
