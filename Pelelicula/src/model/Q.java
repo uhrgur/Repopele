@@ -23,7 +23,7 @@ public class Q {
 		sb.append(", '");
 		sb.append(portada);
 		sb.append("');");
-		//NO ESTA TERMINADO
+		
 		return sb.toString();
 	}
 	
