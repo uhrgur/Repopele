@@ -13,7 +13,7 @@ public class Q {
 		sb.append(anio);
 		sb.append(precio);
 		sb.append(portada);
-		
+		//NO ESTA TERMINADO
 		return sb.toString();
 	}
 	
