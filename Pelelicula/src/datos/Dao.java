@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 public class Dao {
 	//Sera pelicula pero estoy realizando pruebas con void
-	public void daoBuscarPelicula(String pelele){
+	public static void daoBuscarPelicula(String pelele){
 		
         Connection con = null;
         PreparedStatement pst = null;
