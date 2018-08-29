@@ -32,11 +32,13 @@ public class Q {
 }
 
 
-	public String getqEliminarPelicula(String titulo){
+public String getqEliminarPelicula(String titulo){
 		
-		//"SELECT titulo from peliculas;"
-
-		
+		StringBuilder sc = new StringBuilder();
+		sc.append("DELETE FROM peliculas WHERE titulo = '");
+		sc.append(titulo);
+		sc.append("'");
+		return sc.toString();
 	}
 	
 }
