@@ -7,7 +7,7 @@ public class Pelicula {
 	private String trailer; //insertar url
 	private float puntuacion; //puntuacion de la pelicula
 	private String categoria; //categoria de la pelicula
-	private Date ano; // año de la pelicula
+	private int ano; // año de la pelicula
 	private float precio; //precio de la pelicula
 	private String portada; // insertar url portada
 	
@@ -15,7 +15,7 @@ public class Pelicula {
 		super();
 	}
 
-	public Pelicula(String titulo, String descripcion, String trailer, float puntuacion, String categoria, Date ano,
+	public Pelicula(String titulo, String descripcion, String trailer, float puntuacion, String categoria, int ano,
 			float precio, String portada) {
 		super();
 		this.titulo = titulo;
@@ -111,11 +111,11 @@ public class Pelicula {
 		this.categoria = categoria;
 	}
 
-	public Date getAno() {
+	public int getAno() {
 		return ano;
 	}
 
-	public void setAno(Date ano) {
+	public void setAno(int ano) {
 		this.ano = ano;
 	}
 

@@ -5,12 +5,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.mysql.jdbc.Driver;
+
+import model.Pelicula;
 //import model.Pelicula;
 
 public class Dao {
+	
+	private static List<Pelicula> x = new ArrayList<Pelicula>();
 	//Sera pelicula pero estoy realizando pruebas con void
 	public static void daoBuscarPelicula(String pelele){
 		
@@ -38,9 +43,26 @@ public class Dao {
             rs = pst.executeQuery();
 
             while (rs.next()) {
-                System.out.print("imprimiendo dentro de dao" + rs.next());
+            	
+            	String titulo = rs.getString("titulo"); 
+            	String descripcion = rs.getString("descripcion");
+            	String trailer = rs.getString("trailer");
+            	float puntuacion = rs.getFloat("puntuacion");
+            	String categoria = rs.getString("categoria");
+            	int ano = rs.getInt("ano");
+    			float precio = rs.getFloat("precio");
+    			String portada = rs.getString("portada");
+            	
+            	
+                String nombre = rs.getString("titulo");
+                System.out.println(nombre);
+                
+                x.add(new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada));
+                System.out.println(x);
             }
+            
 
+            
         } catch (SQLException ex) {
                 Logger lgr = Logger.getLogger(Dao.class.getName());
                 lgr.log(Level.SEVERE, ex.getMessage(), ex);
