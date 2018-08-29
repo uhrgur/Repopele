@@ -33,7 +33,7 @@ public class SBuscar extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String s = request.getParameter("submit");
-		System.out.println(s);
+		System.out.println("imprimiento s " + s);
 		
 		Dao.daoBuscarPelicula("pelele");
 		
