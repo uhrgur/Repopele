@@ -27,13 +27,15 @@ public class Q {
 		return sb.toString();
 	}
 	
-<<<<<<< HEAD
+
 	public void QMostrar(){
-=======
+}
+
+
 	public String getqEliminarPelicula(String titulo){
 		
 		//"SELECT titulo from peliculas;"
->>>>>>> c0aaa5193fe6456d12721eea534c97ca1fdcba4d
+
 		
 	}
 	
