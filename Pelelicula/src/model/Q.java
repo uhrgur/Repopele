@@ -17,4 +17,10 @@ public class Q {
 		return sb.toString();
 	}
 	
+	public String getqEliminarPelicula(String titulo){
+		
+		//"SELECT titulo from peliculas;"
+		
+	}
+	
 }
