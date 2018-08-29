@@ -140,10 +140,10 @@
                     <a class="nav-link" href="anadir.jsp">Añadir</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Modificar</a>
+                    <a class="nav-link" href="modificar.jsp">Modificar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Eliminar</a>
+                    <a class="nav-link" href="eliminar.jsp">Eliminar</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">

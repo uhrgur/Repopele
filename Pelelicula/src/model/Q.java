@@ -28,7 +28,7 @@ public class Q {
 	}
 	
 
-	public String QMostrar() {
+	public String getqMostrar() {
 		
 		String mostrar = ("SELECT * FROM peliculas;");
 		return mostrar;
