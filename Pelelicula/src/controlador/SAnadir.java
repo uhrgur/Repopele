@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SAnadir
  */
-@WebServlet("/SAnadir")
+@WebServlet("/anadirBD")
 public class SAnadir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,7 @@ public class SAnadir extends HttpServlet {
      * Default constructor. 
      */
     public SAnadir() {
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
