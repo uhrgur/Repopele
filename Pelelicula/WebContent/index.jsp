@@ -137,7 +137,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="WEB-INF/lib/anadir.jsp">Añadir</a>
+                    <a class="nav-link" href="anadir.jsp">Añadir</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Modificar</a>
