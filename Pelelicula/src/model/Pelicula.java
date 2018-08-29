@@ -27,7 +27,23 @@ public class Pelicula {
 		this.precio = precio;
 		this.portada = portada;
 	}
-
+	
+	public Pelicula buscarPelicula(String pelele){
+		
+		
+		
+		
+		
+		Pelicula p = new Pelicula();
+		
+		return p;
+	}
+	
+	
+	
+	
+	
+	//Metodos Getters y Setters.
 	
 	// StringBuilder
 	@Override
