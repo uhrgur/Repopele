@@ -28,6 +28,7 @@ public class Pelicula {
 		this.portada = portada;
 	}
 
+<<<<<<< HEAD
 	
 	public Pelicula buscarPelicula(String pelele){
 		
@@ -45,7 +46,10 @@ public class Pelicula {
 	
 	
 	//Metodos Getters y Setters.
+=======
+>>>>>>> 55ff7412cfa2cf0e4b7f7097a5f61657ef920c36
 	
+	// StringBuilder
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -68,7 +72,9 @@ public class Pelicula {
 		builder.append("]");
 		return builder.toString();
 	}
+	//Fin StringBuilder
 
+	//Getters y Setters.
 	public String getTitulo() {
 		return titulo;
 	}
@@ -133,11 +139,14 @@ public class Pelicula {
 		this.portada = portada;
 	}
 
-	//Fin Metodos Setters y Getters
+	//Fin Setters y Getters
 	
 	
+	//Métodos
 	
-	
+	public void Mostrar(){
+		
+	}
 	
 	
 	
