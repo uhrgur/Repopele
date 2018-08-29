@@ -27,6 +27,7 @@ public class Q {
 	}
 	
 
+<<<<<<< HEAD
 	public String getqEliminarPelicula(String titulo) {
 	}
 	public void QMostrar(){
@@ -38,6 +39,14 @@ public class Q {
 		StringBuilder sb = new StringBuilder();
 		sb.append(titulo);
 		return sb.toString();
+=======
+	public String getqEliminarPelicula(String titulo){
+		
+		StringBuilder sc = new StringBuilder();
+		sc.append("DELETE FROM peliculas WHERE titulo = '");
+		sc.append(titulo);
+		sc.append( "'");
+		return sc.toString();
+>>>>>>> 63202960202d6fb287450a2254f2debed123514c
 	}
-	
 }
