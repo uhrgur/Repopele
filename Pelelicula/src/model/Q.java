@@ -34,7 +34,34 @@ public class Q {
 		return mostrar;
 	}
 	
-
+	public String getqModificarPelicula(String titulo, String descripcion, String trailer, int puntuacion, String categoria, int anio, float precio, String portada){
+	StringBuilder sd = new StringBuilder();
+	sd.append("UPDATE peliculas SET descripcion = '");
+	sd.append(descripcion);
+	sd.append("',");
+	sd.append("trailer ='");
+	sd.append(trailer);
+	sd.append("',");
+	sd.append("puntuacion ='");
+	sd.append(puntuacion);
+	sd.append("',");
+	sd.append("categoria ='");
+	sd.append(categoria);
+	sd.append("',");
+	sd.append("anio ='");
+	sd.append(anio);
+	sd.append("',");
+	sd.append("precio ='");
+	sd.append(precio);
+	sd.append("',");
+	sd.append("portada ='");
+	sd.append(portada);
+	sd.append("'");
+	sd.append("WHERE titulo = '");
+	sd.append(titulo);
+	sd.append("'");
+	return sd.toString();
+}
 
 	public String getqEliminarPelicula(String titulo){
 		
