@@ -17,4 +17,8 @@ public class Q {
 		return sb.toString();
 	}
 	
+	public void QMostrar(){
+		
+	}
+	
 }
