@@ -17,10 +17,11 @@ public class Q {
 		return sb.toString();
 	}
 	
-	public String getqEliminarPelicula(String titulo){
+	public String getqEliminarPelicula (String titulo) {
 		
-		//"SELECT titulo from peliculas;"
-		
+		StringBuilder sb = new StringBuilder();
+		sb.append(titulo);
+		return sb.toString();
 	}
 	
 }
