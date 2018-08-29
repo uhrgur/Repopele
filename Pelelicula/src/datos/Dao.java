@@ -28,7 +28,7 @@ public class Dao {
             rs = pst.executeQuery();
 
             while (rs.next()) {
-                System.out.print(rs.next());
+                System.out.print("imprimiendo dentro de dao" + rs.next());
             }
 
         } catch (SQLException ex) {
