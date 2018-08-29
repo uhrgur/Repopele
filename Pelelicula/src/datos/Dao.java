@@ -5,57 +5,52 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-//import model.Pelicula;
+
+import model.Pelicula;
 
 public class Dao {
-	//Sera pelicula pero estoy realizando pruebas con void
-	public static void daoBuscarPelicula(String pelele){
+	public Pelicula daoBuscarPelicula(String pelele){
 		
-        Connection con = null;
+	    try {
+	        Class.forName("com.mysql.jdbc.Driver");
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("No hay driver");
+	        e.printStackTrace();
+	        return;
+	    }
+
+	    System.out.println("Driver correcto");
+	    Connection connection = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
 
         String url = "jdbc:mysql://localhost:3306/proyecto";
         String user = "root";
         String password = "1111";
+        
+	    try {
+	        connection = DriverManager
+	        .getConnection("jdbc:mysql://localhost/proyecto","root", "1111");
 
-        try {
-            
-            con = DriverManager.getConnection(url, user, password);
-            pst = con.prepareStatement("SELECT * FROM peliculas");
-            rs = pst.executeQuery();
+	    } catch (SQLException e) {
+	        System.out.println("Fallo de conexión, comprueba la consola.");
+	        e.printStackTrace();
+	        return;
+	    }
 
-            while (rs.next()) {
-                System.out.print(rs.next());
-            }
-
-        } catch (SQLException ex) {
-                Logger lgr = Logger.getLogger(Dao.class.getName());
-                lgr.log(Level.SEVERE, ex.getMessage(), ex);
-
-        } finally {
-
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (pst != null) {
-                    pst.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-
-            } catch (SQLException ex) {
-                Logger lgr = Logger.getLogger(Dao.class.getName());
-                lgr.log(Level.WARNING, ex.getMessage(), ex);
-            }
-        }
-  
-
-		//Pelicula p = new Pelicula();
-		//return p;
+	    if (connection != null) {
+	        System.out.println("Conectado");
+	    } else {
+	        System.out.println("Fallo");
+	    }
+		
+		
+	    
+	    
+	    
+	    
+	    
+		Pelicula p = new Pelicula();
+		return p;
 	}
 }
