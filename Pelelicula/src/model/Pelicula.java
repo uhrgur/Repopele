@@ -27,8 +27,6 @@ public class Pelicula {
 		this.precio = precio;
 		this.portada = portada;
 	}
-
-<<<<<<< HEAD
 	
 	public Pelicula buscarPelicula(String pelele){
 		
@@ -46,8 +44,6 @@ public class Pelicula {
 	
 	
 	//Metodos Getters y Setters.
-=======
->>>>>>> 55ff7412cfa2cf0e4b7f7097a5f61657ef920c36
 	
 	// StringBuilder
 	@Override
