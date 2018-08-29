@@ -7,11 +7,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.mysql.jdbc.Driver;
 //import model.Pelicula;
 
 public class Dao {
 	//Sera pelicula pero estoy realizando pruebas con void
 	public static void daoBuscarPelicula(String pelele){
+		
+		System.out.println("Loading driver...");
+
+		try {
+		    Class.forName("com.mysql.jdbc.Driver");
+		    System.out.println("Driver loaded!");
+		} catch (ClassNotFoundException e) {
+		    throw new IllegalStateException("Cannot find the driver in the classpath!", e);
+		}
 		
         Connection con = null;
         PreparedStatement pst = null;
@@ -24,7 +34,7 @@ public class Dao {
         try {
             
             con = DriverManager.getConnection(url, user, password);
-            pst = con.prepareStatement("SELECT * FROM peliculas");
+            pst = con.prepareStatement("SELECT * FROM peliculas;");
             rs = pst.executeQuery();
 
             while (rs.next()) {
