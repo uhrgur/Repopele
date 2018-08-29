@@ -28,8 +28,8 @@ public class Pelicula {
 		this.portada = portada;
 	}
 
-	//Metodos Getters y Setters.
 	
+	// StringBuilder
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -52,7 +52,9 @@ public class Pelicula {
 		builder.append("]");
 		return builder.toString();
 	}
+	//Fin StringBuilder
 
+	//Getters y Setters.
 	public String getTitulo() {
 		return titulo;
 	}
@@ -117,11 +119,14 @@ public class Pelicula {
 		this.portada = portada;
 	}
 
-	//Fin Metodos Setters y Getters
+	//Fin Setters y Getters
 	
 	
+	//Métodos
 	
-	
+	public void Mostrar(){
+		
+	}
 	
 	
 	
