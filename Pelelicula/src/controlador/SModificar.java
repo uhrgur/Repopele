@@ -1,12 +1,13 @@
 package controlador;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import datos.Dao;
 /**
  * Servlet implementation class SModificar
  */
@@ -28,6 +29,19 @@ public class SModificar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String m = request.getParameter("submit");
+		System.out.println("cuidado que m se imprime en 3, 2 , 1 ..." + m);
+		
+		//RECOGER DATOS USUARIO
+		
+		Dao.daoModificarPelicula();
+		
+		RequestDispatcher view = request.getRequestDispatcher("Modificar.jsp");
+		view.forward(request, response);
+		
+		
+		
+		
 	}
 
 	/**

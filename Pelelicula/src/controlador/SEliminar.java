@@ -1,25 +1,27 @@
 package controlador;
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import datos.Dao;
 
 /**
- * Servlet implementation class SBuscar
+ * Servlet implementation class SEliminar
  */
-@WebServlet("/SBuscar")
-public class SBuscar extends HttpServlet {
+@WebServlet("/SEliminar")
+public class SEliminar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SBuscar() {
+    public SEliminar() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,14 +32,14 @@ public class SBuscar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String s = request.getParameter("submit");
-		System.out.println("imprimiento s " + s);
+		String d = request.getParameter("submit");
+		System.out.println("Man que esto funciona hazte caso" + d);
 		
-		// FALTA RECOGER EL DATO DE PARTE DEL USUARIO
+		//RECOGER DATOS USUARIO
 		
-		Dao.daoBuscarPelicula("'Batman 1'");
+		Dao.daoEliminarPelicula();
 		
-		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("eliminar.jsp");
 		view.forward(request, response);
 	}
 
