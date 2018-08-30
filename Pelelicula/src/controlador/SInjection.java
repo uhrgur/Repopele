@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 public class SInjection extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
-    @Resource(name = "jdbc/testDB")
+    @Resource(name = "jdbc/proyecto")
     DataSource ds;
  
     public SInjection() {
@@ -30,7 +30,7 @@ public class SInjection extends HttpServlet {
             Connection con = ds.getConnection();
  
             Statement stmt = con.createStatement();
-            String query = "select * from employee";
+            String query = "select * from peliculas";
             ResultSet rs = stmt.executeQuery(query);
  
             PrintWriter out = response.getWriter();
@@ -45,10 +45,7 @@ public class SInjection extends HttpServlet {
  
             while (rs.next()) {
                 out.print("<tr>");
-                out.print("<td>" + rs.getInt("emp_id") + "</td>");
-                out.print("<td>" + rs.getString("emp_name") + "</td>");
-                out.print("<td>" + rs.getDouble("salary") + "</td>");
-                out.print("<td>" + rs.getString("dept_name") + "</td>");
+                out.print("<td>" + rs.getString("titulo") + "</td>");
                 out.print("</tr>");
             }
             out.print("</table></body></html>");
