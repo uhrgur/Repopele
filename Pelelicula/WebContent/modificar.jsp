@@ -7,6 +7,34 @@
 <title>Cuestionario modificar</title>
 </head>
 <body>
+	<form action="/SModificar" method="post">
+     	Titulo:
+	    <input type="text" name="titulo">
+	    <br/>
+	     Descripción:
+	    <input type="text" name="descripción">
+	    <br/>
+	     Trailer:
+	    <input type="text" name="trailer">
+	    <br/>
+	     Puntuación:
+	    <input type="text" name="puntuacion">
+	    <br/>
+	     Categoría:
+	    <input type="text" name="categoria">
+	    <br/>
+	     Año:
+	    <input type="text" name="ano">
+	    <br/>
+	     Precio:
+	    <input type="text" name="precio">
+	    <br/>
+	     Portada:
+	    <input type="text" name="portada">
+	    <br/>
+		<input type="submit" name="submit" value="enviar">
+		<input type="reset" name="reset" value="borrar datos">
+	</form>
 	
 </body>
 </html>
