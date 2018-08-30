@@ -40,9 +40,11 @@ public class SBuscar extends HttpServlet {
 		y = Dao.daoBuscarPelicula("'" + busqueda + "'");
 		Iterator<Pelicula> it = y.iterator();
 
-		while(it.hasNext())
+		while(it.hasNext()){
 		  System.out.println(it.next());
+		}
 		
+		request.setAttribute("peli", y);
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);
 	}

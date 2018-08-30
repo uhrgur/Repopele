@@ -1,6 +1,6 @@
 package datos;
 
-public interface IDatos {
+public interface IDao {
 
 	public void Mostrar();
 }

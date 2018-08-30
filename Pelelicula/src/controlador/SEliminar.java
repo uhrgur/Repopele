@@ -31,13 +31,12 @@ public class SEliminar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String d = request.getParameter("submit");
-		System.out.println("Man que esto funciona hazte caso" + d);
+		
+		String titulo = request.getParameter("titulo");
 		
 		//RECOGER DATOS USUARIO
 		
-		Dao.daoEliminarPelicula();
+		Dao.daoEliminarPelicula(titulo);
 		
 		RequestDispatcher view = request.getRequestDispatcher("eliminar.jsp");
 		view.forward(request, response);
