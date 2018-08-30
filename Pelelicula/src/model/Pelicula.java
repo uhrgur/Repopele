@@ -138,11 +138,6 @@ public class Pelicula {
 	//Fin Setters y Getters
 	
 	
-	//Métodos
-	
-	public void Mostrar(){
-		
-	}
 	
 	
 	

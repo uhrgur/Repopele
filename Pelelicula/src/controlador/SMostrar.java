@@ -35,7 +35,7 @@ public class SMostrar extends HttpServlet {
 		
 		//FALTA REOCGER DEL USUARIO LO QUE POLLAS ME DIGA
 		
-		Dao.daoMostrarPelicula();	
+		Dao.daoLista();	
 		
 		RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
 		view.forward(request, response);
