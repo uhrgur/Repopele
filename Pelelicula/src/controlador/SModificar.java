@@ -28,7 +28,14 @@ public class SModificar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String titulo = request.getParameter(titulo);
+		String descripcion = request.getParameter(descripcion);
+		String trailer = request.getParameter(trailer);
+		float puntuacion = Float.parseFloat(request.getParameter("puntuacion"));
+		String categoria = request.getParameter(categoria);
+		Integer ano = Integer.parseInt(request.getParameter("ano"));
+		float precio = Float.parseFloat(request.getParameter("precio"));
+		String portada = request.getParameter(portada);
 		String m = request.getParameter("submit");
 		System.out.println("cuidado que m se imprime en 3, 2 , 1 ..." + m);
 		
