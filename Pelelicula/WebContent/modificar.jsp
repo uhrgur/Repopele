@@ -7,7 +7,7 @@
 <title>Cuestionario modificar</title>
 </head>
 <body>
-	<form action="/SModificar" method="post">
+	<form action="SModificar" method="post">
      	Titulo:
 	    <input type="text" name="titulo">
 	    <br/>
