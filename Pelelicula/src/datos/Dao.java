@@ -15,10 +15,10 @@ import model.Pelicula;
 
 public class Dao {
 	
-	private static List<Pelicula> x = new ArrayList<Pelicula>();
+	
 	//Sera pelicula pero estoy realizando pruebas con void
 	public static void daoBuscarPelicula(String pelele){
-		
+		List<Pelicula> x = new ArrayList<Pelicula>();
 		System.out.println("Loading driver...");
 
 		try {
@@ -39,7 +39,7 @@ public class Dao {
         try {
             
             con = DriverManager.getConnection(url, user, password);
-            pst = con.prepareStatement("SELECT * FROM peliculas;");
+            pst = con.prepareStatement("SELECT * FROM peliculas WHERE titulo = " + pelele + ";");
             rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -85,9 +85,81 @@ public class Dao {
                 lgr.log(Level.WARNING, ex.getMessage(), ex);
             }
         }
-  
+	}
+    	public static ArrayList<Pelicula> daoLista(){
+    		List<Pelicula> x = new ArrayList<Pelicula>();
+    		System.out.println("Loading driver...");
 
-		//Pelicula p = new Pelicula();
-		//return p;
+    		try {
+    		    Class.forName("com.mysql.jdbc.Driver");
+    		    System.out.println("Driver loaded!");
+    		} catch (ClassNotFoundException e) {
+    		    throw new IllegalStateException("Cannot find the driver in the classpath!", e);
+    		}
+    		
+            Connection con = null;
+            PreparedStatement pst = null;
+            ResultSet rs = null;
+
+            String url = "jdbc:mysql://localhost:3306/proyecto";
+            String user = "root";
+            String password = "1111";
+
+            try {
+                
+                con = DriverManager.getConnection(url, user, password);
+                pst = con.prepareStatement("SELECT * FROM peliculas;");
+                rs = pst.executeQuery();
+
+                while (rs.next()) {
+                	
+                	String titulo = rs.getString("titulo"); 
+                	String descripcion = rs.getString("descripcion");
+                	String trailer = rs.getString("trailer");
+                	float puntuacion = rs.getFloat("puntuacion");
+                	String categoria = rs.getString("categoria");
+                	int ano = rs.getInt("ano");
+        			float precio = rs.getFloat("precio");
+        			String portada = rs.getString("portada");
+                	
+                	
+                    String nombre = rs.getString("titulo");
+                    System.out.println(nombre);
+                    
+                    x.add(new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada));
+                    System.out.println(x);
+                    
+                }
+                
+
+                
+            } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+            } finally {
+
+                try {
+                    if (rs != null) {
+                        rs.close();
+                    }
+                    if (pst != null) {
+                        pst.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+                    
+                    
+
+                } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.WARNING, ex.getMessage(), ex);
+                }
+                
+            }
+            
+            return (ArrayList<Pelicula>) x;
+
 	}
 }

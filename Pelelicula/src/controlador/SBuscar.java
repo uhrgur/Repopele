@@ -34,7 +34,9 @@ public class SBuscar extends HttpServlet {
 		String s = request.getParameter("submit");
 		System.out.println("imprimiento s " + s);
 		
-		Dao.daoBuscarPelicula("pelele");
+		// FALTA RECOGER EL DATO DE PARTE DEL USUARIO
+		
+		Dao.daoBuscarPelicula("'Batman 1'");
 		
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);
