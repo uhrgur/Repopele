@@ -1,6 +1,10 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
+import model.Pelicula;
 
 /**
  * Servlet implementation class SBuscar
@@ -28,22 +33,21 @@ public class SBuscar extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String s = request.getParameter("submit");
-		System.out.println("imprimiento s " + s);
-		
-		// FALTA RECOGER EL DATO DE PARTE DEL USUARIO
-		
-		Dao.daoBuscarPelicula("'Batman 1'");
+
+		String busqueda = request.getParameter("titulo");
+		System.out.println("El valor del string busqueda es: " + busqueda);
+		List<Pelicula> y = new ArrayList<Pelicula>();
+		y = Dao.daoBuscarPelicula("'" + busqueda + "'");
+		Iterator<Pelicula> it = y.iterator();
+
+		while(it.hasNext())
+		  System.out.println(it.next());
 		
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

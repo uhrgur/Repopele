@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +18,7 @@ public class Dao {
 	
 	
 	//Sera pelicula pero estoy realizando pruebas con void
-	public static void daoBuscarPelicula(String pelele){
+	public static ArrayList<Pelicula> daoBuscarPelicula(String pelele){
 		List<Pelicula> x = new ArrayList<Pelicula>();
 		System.out.println("Loading driver...");
 
@@ -61,14 +62,14 @@ public class Dao {
                 System.out.println(x);
             }
             
-
+            
             
         } catch (SQLException ex) {
                 Logger lgr = Logger.getLogger(Dao.class.getName());
                 lgr.log(Level.SEVERE, ex.getMessage(), ex);
 
         } finally {
-
+        	        	
             try {
                 if (rs != null) {
                     rs.close();
@@ -85,6 +86,10 @@ public class Dao {
                 lgr.log(Level.WARNING, ex.getMessage(), ex);
             }
         }
+        
+        return (ArrayList<Pelicula>) x;
+        
+        
 	}
     	public static ArrayList<Pelicula> daoLista(){
     		List<Pelicula> x = new ArrayList<Pelicula>();
