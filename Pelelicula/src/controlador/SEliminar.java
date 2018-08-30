@@ -8,18 +8,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import datos.Dao;
+
 /**
- * Servlet implementation class SMostrar
+ * Servlet implementation class SEliminar
  */
-@WebServlet("/SMostrar")
-public class SMostrar extends HttpServlet {
+@WebServlet("/SEliminar")
+public class SEliminar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SMostrar() {
+    public SEliminar() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,14 +32,14 @@ public class SMostrar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String sh = request.getParameter("submit");
-		System.out.println("ya me estoy cansando de escribir mensajes de imprimir , pero imprime sh" +  sh);
+		String d = request.getParameter("submit");
+		System.out.println("Man que esto funciona hazte caso" + d);
 		
-		//FALTA REOCGER DEL USUARIO LO QUE POLLAS ME DIGA
+		//RECOGER DATOS USUARIO
 		
-		Dao.daoMostrarPelicula();	
+		Dao.daoEliminarPelicula();
 		
-		RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("eliminar.jsp");
 		view.forward(request, response);
 	}
 

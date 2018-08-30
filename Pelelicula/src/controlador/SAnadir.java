@@ -28,8 +28,8 @@ public class SAnadir extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String d = request.getParameter("submit");
-		System.out.println("Imprimiendo d" + d);
+		String a = request.getParameter("submit");
+		System.out.println("Imprimiendo a" + a);
 		
 		// FALTA RECOGER DATO DEL PUTO USUARIO MONGOL :)
 		

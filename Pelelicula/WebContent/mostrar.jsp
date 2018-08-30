@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form>
+<p>SE MOSTRARÁ EL LISTADO DE TODAS LAS PELICULAS ALMACENADAS EN LA BBDD.</p> 
+</form>
 
-SE MOSTRARÁ EL LISTADO DE TODAS LAS PELICULAS ALMACENADAS EN LA BBDD.
 
 </body>
 </html>

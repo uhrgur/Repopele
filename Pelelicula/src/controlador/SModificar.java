@@ -29,8 +29,8 @@ public class SModificar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String f = request.getParameter("submit");
-		System.out.println("cuidado que f se imprime en 3, 2 , 1 ..." + f);
+		String m = request.getParameter("submit");
+		System.out.println("cuidado que m se imprime en 3, 2 , 1 ..." + m);
 		
 		//RECOGER DATOS USUARIO
 		
