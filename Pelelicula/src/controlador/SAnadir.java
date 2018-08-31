@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datos.Dao;
+import model.Pelicula;
 
 /**
  * Servlet implementation class SAnadir
@@ -39,9 +40,11 @@ public class SAnadir extends HttpServlet {
 		
 		// FALTA RECOGER DATO DEL PUTO USUARIO MONGOL :)
 		
-		Dao.daoAnadirPelicula();
+		Pelicula peli = new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada);
 		
-		RequestDispatcher view = request.getRequestDispatcher("Anadir.jsp");
+		Dao.daoAnadirPelicula(peli);
+		
+		RequestDispatcher view = request.getRequestDispatcher("anadir.jsp");
 		view.forward(request, response);
 		
 		

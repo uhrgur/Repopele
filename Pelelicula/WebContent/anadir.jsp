@@ -67,7 +67,7 @@
             <div><input type="text" name="portada"></div>
             <br/>
             <div class="c1 desc">Descripción:</div>
-            <div class="c2"> <textarea input type="text" name=titulo rows="4" cols="50">
+            <div class="c2"> <textarea type="text" name="descripcion" rows="4" cols="50">
             </textarea></div>
             <input type="submit" name="submit" value="enviar">
             <input type="reset" name="reset" value="borrar datos">
