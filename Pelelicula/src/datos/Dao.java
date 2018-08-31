@@ -206,6 +206,62 @@ public class Dao {
             System.out.println("Finalizado procedimiento update");
 
     }
+    	
+public static void daoAnadirPelicula(Pelicula pelicula){
+    		
+    		System.out.println("Loading driver...");
+    		
+            String tit = pelicula.getTitulo();
+            int ano = pelicula.getAno();
+            String cat = pelicula.getCategoria();
+            String desc = pelicula.getDescripcion();
+            String port = pelicula.getPortada();
+            float precio = pelicula.getPrecio();
+            int punt = (int) pelicula.getPuntuacion();
+            String tra = pelicula.getTrailer();
+            
+            String query = Q.getqAnadirPelicula(tit, desc, tra, punt, cat, ano, precio, port);
+            Connection con = null;
+            PreparedStatement pst = null;
+            boolean rs = false;
+
+            try {
+                
+
+            	con = ConexionDB.getConection();
+                pst = con.prepareStatement(query);
+                rs = pst.execute();
+                System.out.println("PSTQuery");
+                	
+                	System.out.println("Query ejecutada.");
+                    
+                
+            } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+            } finally {
+            	        	
+                try {
+
+                    if (pst != null) {
+                        pst.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+
+                } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.WARNING, ex.getMessage(), ex);
+                }
+                
+            }
+            
+            System.out.println("Finalizado procedimiento update");
+
+    }
+    	
     	public static void daoEliminarPelicula(String elm){
     		
     		System.out.println("Loading driver...");
