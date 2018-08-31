@@ -9,7 +9,6 @@ public class Q {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO peliculas (titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada) VALUES ('");
-		sb.append("', '");
 		sb.append(titulo);
 		sb.append("', '");
 		sb.append(descripcion);

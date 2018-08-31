@@ -28,6 +28,7 @@ public class SAnadir extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (request.getParameter("flag") !=null) {
 		String titulo = request.getParameter("titulo");
 		String trailer = request.getParameter("trailer");
 		float puntuacion = Float.parseFloat(request.getParameter("puntuacion"));
@@ -37,16 +38,18 @@ public class SAnadir extends HttpServlet {
 		String portada = request.getParameter("portada");
 		String descripcion = request.getParameter("descripcion");
 		
-		
-		// FALTA RECOGER DATO DEL PUTO USUARIO MONGOL :)
+	
 		
 		Pelicula peli = new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada);
 		
 		Dao.daoAnadirPelicula(peli);
 		
+		RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
+		view.forward(request, response);
+		}else{
 		RequestDispatcher view = request.getRequestDispatcher("anadir.jsp");
 		view.forward(request, response);
-		
+		}
 		
 		
 	}
