@@ -14,7 +14,7 @@ import datos.Dao;
 /**
  * Servlet implementation class SAnadir
  */
-@WebServlet("/SAnadirBD")
+@WebServlet("/SAnadir")
 public class SAnadir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
