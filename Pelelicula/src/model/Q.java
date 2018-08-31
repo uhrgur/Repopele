@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Q {
 
-	public String getqAnadirPelicula(String titulo, String descripcion, String trailer, int puntuacion,
+	public static String getqAnadirPelicula(String titulo, String descripcion, String trailer, int puntuacion,
 			String categoria, int ano, float precio, String portada) {
 
 		StringBuilder sb = new StringBuilder();
@@ -30,7 +30,7 @@ public class Q {
 		return sb.toString();
 	}
 
-	public String getqMostrar() {
+	public static String getqMostrar() {
 
 		String mostrar = ("SELECT * FROM peliculas;");
 		return mostrar;
@@ -70,7 +70,7 @@ public class Q {
 		return sd.toString();
 	}
 
-	public String getqEliminarPelicula(String titulo) {
+	public static String getqEliminarPelicula(String titulo) {
 
 		StringBuilder sc = new StringBuilder();
 		sc.append("DELETE FROM peliculas WHERE titulo = '");
@@ -79,7 +79,7 @@ public class Q {
 		return sc.toString();
 	}
 
-	public String getqBuscarPelicula(String titulo) {
+	public static String getqBuscarPelicula(String titulo) {
 		StringBuilder ss = new StringBuilder();
 		ss.append("SELECT * FROM peliculas WHERE titulo = '");
 		ss.append(titulo);
@@ -88,7 +88,7 @@ public class Q {
 
 	}
 
-	public String getqOrdenarCategoria(String categoria) {
+	public static String getqOrdenarCategoria(String categoria) {
 		StringBuilder oc = new StringBuilder();
 		oc.append("SELECT * from peliculas where categoria = ' ");
 		oc.append(categoria);
@@ -96,7 +96,7 @@ public class Q {
 		return oc.toString();
 	}
 	
-	public String getqOrdenarPrecio(String precio) {
+	public static String getqOrdenarPrecio(String precio) {
 		StringBuilder op = new StringBuilder();
 		op.append("SELECT * from peliculas where precio = ' ");
 		op.append(precio);
