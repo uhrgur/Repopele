@@ -154,7 +154,7 @@ public class Dao {
             return (ArrayList<Pelicula>) x;
 
 	}
-    	public static void SModificar(String elm, String tituloAntiguo, Pelicula pelicula){
+    	public static void SModificar(String elm, Pelicula pelicula){
     		
     		System.out.println("Loading driver...");
     		
@@ -167,7 +167,7 @@ public class Dao {
             int punt = (int) pelicula.getPuntuacion();
             String tra = pelicula.getTrailer();
             
-            String query = Q.getqModificarPelicula(tituloAntiguo, tit, desc, tra, punt, cat, ano, precio, port);
+            String query = Q.getqModificarPelicula(elm, tit, desc, tra, punt, cat, ano, precio, port);
             Connection con = null;
             PreparedStatement pst = null;
             ResultSet rs = null;
@@ -181,7 +181,7 @@ public class Dao {
 
                 while (rs.next()) {
                 	
-                	String ptitulo = rs.getString("titulo"); 
+                	System.out.println("Query ejecutada.");
                     
                 }
                 
