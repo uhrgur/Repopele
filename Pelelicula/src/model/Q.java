@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Q {
 
 	public String getqAnadirPelicula(String titulo, String descripcion, String trailer, int puntuacion,
-			String categoria, int anio, float precio, String portada) {
+			String categoria, int ano, float precio, String portada) {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO peliculas (titulo, descripcion, trailer, puntuacion, categoria, anio, precio, portada) VALUES ('");
@@ -20,7 +20,7 @@ public class Q {
 		sb.append(", '");
 		sb.append(categoria);
 		sb.append("', ");
-		sb.append(anio);
+		sb.append(ano);
 		sb.append(", ");
 		sb.append(precio);
 		sb.append(", '");
