@@ -1,6 +1,9 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,8 +48,11 @@ public class SModificar extends HttpServlet {
 		Pelicula shit = new Pelicula("Ensalada de pepino en el instituto femenino","Remitase al titulo","Esto es el trailer.coma",10F,"Infantil",1992,10.10F,"portada.url");
 		
 		Dao.daoModificarPelicula("Batman 1",shit);
-		request.setAttribute("b1", shit);
-		System.out.println("Jua");
+		
+	
+		List listaP = new Dao().daoLista();
+		request.setAttribute("ListaP", listaP);
+	
 		
 		RequestDispatcher view = request.getRequestDispatcher("modificar.jsp");
 		view.forward(request, response);
