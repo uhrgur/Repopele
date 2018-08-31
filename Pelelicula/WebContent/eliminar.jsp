@@ -8,8 +8,8 @@
 </head>
 <body>
 
-	<form action="" id="eliminarPelicula">
-	<select name="movielist" form="movieform">
+	<form action="SEliminar" id="eliminarPelicula">
+	<select name="titulo">
 	  <option value=""></option>
 	  <option value=""></option>
 	  <option value=""></option>
