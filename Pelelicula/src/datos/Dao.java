@@ -91,9 +91,9 @@ public class Dao {
             PreparedStatement pst = null;
             ResultSet rs = null;
 
-            String url = "jdbc:mysql://localhost:3306/proyecto";
-            String user = "root";
-            String password = "1111";
+            String url = "jdbc:mysql://10.90.36.16:3306/proyecto";
+            String user = "enrique";
+            String password = "enrique";
 
             try {
                 

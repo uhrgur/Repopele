@@ -2,6 +2,7 @@ package controlador;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
+import jdk.management.resource.internal.inst.SocketOutputStreamRMHooks;
 import model.Pelicula;
 /**
  * Servlet implementation class SMostrar
@@ -32,9 +34,20 @@ public class SMostrar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Pelicula> lista = new ArrayList<Pelicula>();
+		
 		lista = Dao.daoLista();
+		
+		System.out.println("--Servlet: Estamos en mostrar lista"+lista);
+		
+		/*Iterator<Pelicula> itr = lista.iterator();
+		while(itr.hasNext()){
+			
+			System.out.println("lista: "+ itr.next());
+		}*/
+		
+		
 		request.setAttribute("peliculas", lista);
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
 		view.forward(request, response);
 	}
 
