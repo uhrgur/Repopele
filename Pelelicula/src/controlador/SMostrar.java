@@ -1,6 +1,8 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
+import model.Pelicula;
 /**
  * Servlet implementation class SMostrar
  */
@@ -28,16 +31,10 @@ public class SMostrar extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String sh = request.getParameter("submit");
-		System.out.println("ya me estoy cansando de escribir mensajes de imprimir , pero imprime sh" +  sh);
-		
-		//FALTA REOCGER DEL USUARIO LO QUE POLLAS ME DIGA
-		
-		Dao.daoLista();
-		
-		RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
+		List<Pelicula> lista = new ArrayList<Pelicula>();
+		lista = Dao.daoLista();
+		request.setAttribute("peliculas", lista);
+		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 		view.forward(request, response);
 	}
 

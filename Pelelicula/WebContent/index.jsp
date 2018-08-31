@@ -208,6 +208,10 @@
 
     <div class="container marketing">
 
+		<!--  LISTA DE TODAS LAS PELICULAS EN LA BBDD -->
+		
+		${peliculas.titulo}
+
         <!-- Three columns of text below the carousel -->
         <div class="row">
 
