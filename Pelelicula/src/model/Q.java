@@ -36,10 +36,13 @@ public class Q {
 		return mostrar;
 	}
 
-	public String getqModificarPelicula(String titulo, String descripcion, String trailer, int puntuacion,
-			String categoria, int anio, float precio, String portada) {
+	public static String getqModificarPelicula(String titulo, String descripcion, String trailer, int puntuacion,
+			String categoria, int ano, float precio, String portada) {
 		StringBuilder sd = new StringBuilder();
-		sd.append("UPDATE peliculas SET descripcion = '");
+		sd.append("UPDATE peliculas SET titulo = '");
+		sd.append(titulo);
+		sd.append("',");
+		sd.append("descripcion ='");
 		sd.append(descripcion);
 		sd.append("',");
 		sd.append("trailer ='");
@@ -51,8 +54,8 @@ public class Q {
 		sd.append("categoria ='");
 		sd.append(categoria);
 		sd.append("',");
-		sd.append("anio ='");
-		sd.append(anio);
+		sd.append("ano ='");
+		sd.append(ano);
 		sd.append("',");
 		sd.append("precio ='");
 		sd.append(precio);
@@ -62,7 +65,8 @@ public class Q {
 		sd.append("'");
 		sd.append("WHERE titulo = '");
 		sd.append(titulo);
-		sd.append("'");
+		sd.append("';");
+		System.out.println("Imprimiendo return getqModificar: " + sd.toString());
 		return sd.toString();
 	}
 

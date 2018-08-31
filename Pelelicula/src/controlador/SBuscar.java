@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
 import model.Pelicula;
+import model.Q;
 
 /**
  * Servlet implementation class SBuscar
@@ -20,7 +21,7 @@ import model.Pelicula;
 @WebServlet("/SBuscar")
 public class SBuscar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,14 +37,9 @@ public class SBuscar extends HttpServlet {
 
 		String busqueda = request.getParameter("titulo");
 		System.out.println("El valor del string busqueda es: " + busqueda);
-		List<Pelicula> y = new ArrayList<Pelicula>();
+		Pelicula y = new Pelicula();
 		y = Dao.daoBuscarPelicula("'" + busqueda + "'");
-		Iterator<Pelicula> it = y.iterator();
-
-		while(it.hasNext()){
-		  System.out.println(it.next());
-		}
-		
+		Q.getqModificarPelicula("batman 1","hola","trailer",9,"anime",1998,1,"hola" );
 		request.setAttribute("peli", y);
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);

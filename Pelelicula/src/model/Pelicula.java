@@ -1,5 +1,5 @@
 package model;
-import java.util.*;
+
 public class Pelicula {
 
 	private String titulo;  //Nombre de la pelicula
@@ -27,20 +27,6 @@ public class Pelicula {
 		this.precio = precio;
 		this.portada = portada;
 	}
-	
-	public Pelicula buscarPelicula(String pelele){
-		
-		
-		
-		
-		
-		Pelicula p = new Pelicula();
-		
-		return p;
-	}
-	
-	
-	
 	
 	
 	//Metodos Getters y Setters.
@@ -134,6 +120,8 @@ public class Pelicula {
 	public void setPortada(String portada) {
 		this.portada = portada;
 	}
+
+
 
 	//Fin Setters y Getters
 	
