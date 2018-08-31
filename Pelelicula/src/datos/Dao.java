@@ -307,4 +307,95 @@ public static void daoAnadirPelicula(Pelicula pelicula){
             System.out.println("Finalizado procedimiento eliminar");
 
     }
+    	
+   	public static void daoOrdenarPrecio(String elm){
+    		
+    		System.out.println("Loading driver...");
+            
+            String query = Q.getqOrdenarPrecio(elm);
+            Connection con = null;
+            PreparedStatement pst = null;
+            boolean rs = false;
+
+            try {
+                
+
+            	con = ConexionDB.getConection();
+                pst = con.prepareStatement(query);
+                rs = pst.execute();
+                System.out.println("ELIMINARQuery");
+                	
+                	System.out.println("Query eliminar ejecutada.");
+                    
+                
+            } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+            } finally {
+            	        	
+                try {
+
+                    if (pst != null) {
+                        pst.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+
+                } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.WARNING, ex.getMessage(), ex);
+                }
+                
+            }
+            
+            System.out.println("Finalizado procedimiento eliminar");
+
+    }
+	public static void daoOrdenarCategoria(String elm){
+		
+		System.out.println("Loading driver...");
+        
+        String query = Q.getqOrdenarCategoria(elm);
+        Connection con = null;
+        PreparedStatement pst = null;
+        boolean rs = false;
+
+        try {
+            
+
+        	con = ConexionDB.getConection();
+            pst = con.prepareStatement(query);
+            rs = pst.execute();
+            System.out.println("ELIMINARQuery");
+            	
+            	System.out.println("Query eliminar ejecutada.");
+                
+            
+        } catch (SQLException ex) {
+                Logger lgr = Logger.getLogger(Dao.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+        } finally {
+        	        	
+            try {
+
+                if (pst != null) {
+                    pst.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+                Logger lgr = Logger.getLogger(Dao.class.getName());
+                lgr.log(Level.WARNING, ex.getMessage(), ex);
+            }
+            
+        }
+        
+        System.out.println("Finalizado procedimiento eliminar");
+
+}
 }
