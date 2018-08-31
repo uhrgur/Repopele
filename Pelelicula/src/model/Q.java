@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Q {
 
 	public String getqAnadirPelicula(String titulo, String descripcion, String trailer, int puntuacion,
-			String categoria, int anio, float precio, String portada) {
+			String categoria, int ano, float precio, String portada) {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO peliculas (titulo, descripcion, trailer, puntuacion, categoria, anio, precio, portada) VALUES ('");
@@ -20,7 +20,7 @@ public class Q {
 		sb.append(", '");
 		sb.append(categoria);
 		sb.append("', ");
-		sb.append(anio);
+		sb.append(ano);
 		sb.append(", ");
 		sb.append(precio);
 		sb.append(", '");
@@ -75,7 +75,7 @@ public class Q {
 		StringBuilder sc = new StringBuilder();
 		sc.append("DELETE FROM peliculas WHERE titulo = '");
 		sc.append(titulo);
-		sc.append("'");
+		sc.append("';");
 		return sc.toString();
 	}
 
@@ -83,7 +83,7 @@ public class Q {
 		StringBuilder ss = new StringBuilder();
 		ss.append("SELECT * FROM peliculas WHERE titulo = '");
 		ss.append(titulo);
-		ss.append("'");
+		ss.append("';");
 		return ss.toString();
 
 	}
@@ -92,7 +92,16 @@ public class Q {
 		StringBuilder oc = new StringBuilder();
 		oc.append("SELECT * from peliculas where categoria = ' ");
 		oc.append(categoria);
-		oc.append("'");
+		oc.append("';");
 		return oc.toString();
 	}
+	
+	public String getqOrdenarPrecio(String precio) {
+		StringBuilder op = new StringBuilder();
+		op.append("SELECT * from peliculas where precio = ' ");
+		op.append(precio);
+		op.append("';");
+		return op.toString();
+	}
+
 }
