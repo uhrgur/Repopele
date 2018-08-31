@@ -20,7 +20,6 @@ import model.Pelicula;
 @WebServlet("/SBuscar")
 public class SBuscar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
     /**
      * @see HttpServlet#HttpServlet()
