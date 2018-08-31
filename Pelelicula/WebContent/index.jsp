@@ -213,6 +213,7 @@
 
             <div class="col-xl-4">
             	<form action="SBuscar" method="post">
+            	<input type="hidden" name="titulo" value="Batman 1">
             	<input type="submit" value="enviar">
             	</form>
                 <img class="" src="/images/lupa.png" alt="Generic placeholder image" width="200" height="200">

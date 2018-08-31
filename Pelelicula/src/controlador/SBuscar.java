@@ -36,12 +36,10 @@ public class SBuscar extends HttpServlet {
 
 		String busqueda = request.getParameter("titulo");
 		System.out.println("El valor del string busqueda es: " + busqueda);
-		List<Pelicula> y = new ArrayList<Pelicula>();
+		Pelicula y = new Pelicula();
 		y = Dao.daoBuscarPelicula("'" + busqueda + "'");
-		Iterator<Pelicula> it = y.iterator();
 
-		while(it.hasNext())
-		  System.out.println(it.next());
+		System.out.println("Imprimiendo objeto traido del dao " + y);
 		
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);

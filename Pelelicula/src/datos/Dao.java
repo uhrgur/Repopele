@@ -18,28 +18,19 @@ public class Dao {
 	
 	
 	//Sera pelicula pero estoy realizando pruebas con void
-	public static ArrayList<Pelicula> daoBuscarPelicula(String pelele){
-		List<Pelicula> x = new ArrayList<Pelicula>();
-		System.out.println("Loading driver...");
+	public static Pelicula daoBuscarPelicula(String pelele){
 
-		try {
-		    Class.forName("com.mysql.jdbc.Driver");
-		    System.out.println("Driver loaded!");
-		} catch (ClassNotFoundException e) {
-		    throw new IllegalStateException("Cannot find the driver in the classpath!", e);
-		}
+		System.out.println("Loading driver...");
+		
+		Pelicula peli = null;
 		
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
 
-        String url = "jdbc:mysql://localhost:3306/proyecto";
-        String user = "root";
-        String password = "1111";
-
         try {
             
-            con = DriverManager.getConnection(url, user, password);
+        	con = ConexionDB.getConection();
             pst = con.prepareStatement("SELECT * FROM peliculas WHERE titulo = " + pelele + ";");
             rs = pst.executeQuery();
 
@@ -53,16 +44,11 @@ public class Dao {
             	int ano = rs.getInt("ano");
     			float precio = rs.getFloat("precio");
     			String portada = rs.getString("portada");
-            	
-            	
-                String nombre = rs.getString("titulo");
-                System.out.println(nombre);
                 
-                x.add(new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada));
-                System.out.println(x);
+                peli = new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada);
+
+                
             }
-            
-            
             
         } catch (SQLException ex) {
                 Logger lgr = Logger.getLogger(Dao.class.getName());
@@ -71,6 +57,7 @@ public class Dao {
         } finally {
         	        	
             try {
+            	
                 if (rs != null) {
                     rs.close();
                 }
@@ -86,9 +73,8 @@ public class Dao {
                 lgr.log(Level.WARNING, ex.getMessage(), ex);
             }
         }
-        
-        return (ArrayList<Pelicula>) x;
-        
+		
+        return peli;
         
 	}
     	public static ArrayList<Pelicula> daoLista(){
@@ -167,4 +153,62 @@ public class Dao {
             return (ArrayList<Pelicula>) x;
 
 	}
+    	public static void SModificar(String elm){
+    		
+    		List<Pelicula> x = new ArrayList<Pelicula>();
+    		System.out.println("Loading driver...");
+    		
+            Connection con = null;
+            PreparedStatement pst = null;
+            ResultSet rs = null;
+
+            try {
+                
+            	con = ConexionDB.getConection();
+                pst = con.prepareStatement("UPDATE");
+                rs = pst.executeQuery();
+
+                while (rs.next()) {
+                	
+                	String titulo = rs.getString("titulo"); 
+                	String descripcion = rs.getString("descripcion");
+                	String trailer = rs.getString("trailer");
+                	float puntuacion = rs.getFloat("puntuacion");
+                	String categoria = rs.getString("categoria");
+                	int ano = rs.getInt("ano");
+        			float precio = rs.getFloat("precio");
+        			String portada = rs.getString("portada");
+                    
+                    x.add(new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada));
+                    System.out.println(x);
+                    
+                }
+                
+            } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+            } finally {
+            	        	
+                try {
+                    if (rs != null) {
+                        rs.close();
+                    }
+                    if (pst != null) {
+                        pst.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+
+                } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.WARNING, ex.getMessage(), ex);
+                }
+                
+            }
+            
+        //RETURN
+
+    }
 }
