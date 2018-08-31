@@ -75,7 +75,7 @@ public class Q {
 		StringBuilder sc = new StringBuilder();
 		sc.append("DELETE FROM peliculas WHERE titulo = '");
 		sc.append(titulo);
-		sc.append("'");
+		sc.append("';");
 		return sc.toString();
 	}
 
@@ -83,7 +83,7 @@ public class Q {
 		StringBuilder ss = new StringBuilder();
 		ss.append("SELECT * FROM peliculas WHERE titulo = '");
 		ss.append(titulo);
-		ss.append("'");
+		ss.append("';");
 		return ss.toString();
 
 	}
@@ -92,7 +92,7 @@ public class Q {
 		StringBuilder oc = new StringBuilder();
 		oc.append("SELECT * from peliculas where categoria = ' ");
 		oc.append(categoria);
-		oc.append("'");
+		oc.append("';");
 		return oc.toString();
 	}
 	
@@ -100,7 +100,8 @@ public class Q {
 		StringBuilder op = new StringBuilder();
 		op.append("SELECT * from peliculas where precio = ' ");
 		op.append(precio);
-		op.append("'");
+		op.append("';");
 		return op.toString();
 	}
+
 }
