@@ -18,14 +18,14 @@ import model.Pelicula;
 @WebServlet("/SModificar")
 public class SModificar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SModificar() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SModificar() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,22 +42,26 @@ public class SModificar extends HttpServlet {
 		String portada = request.getParameter(portada);
 		String m = request.getParameter("submit");
 		System.out.println("cuidado que m se imprime en 3, 2 , 1 ..." + m);
-		*/
+		 */
 		//RECOGER DATOS USUARIO
-		
+
 		Pelicula shit = new Pelicula("Ensalada de pepino en el instituto femenino","Remitase al titulo","Esto es el trailer.coma",10F,"Infantil",1992,10.10F,"portada.url");
-		
+
 		Dao.daoModificarPelicula("Batman 1",shit);
 		
-	
-		List listaP = new Dao().daoLista();
-		request.setAttribute("ListaP", listaP);
+		
+		List<Pelicula> lista = new ArrayList<Pelicula>();
+		
+		lista = Dao.daoLista();
+		
+		
+		request.setAttribute("Peliculas", lista);
 		RequestDispatcher view = request.getRequestDispatcher("modificar.jsp");
 		view.forward(request, response);
-		
-		
-		
-		
+
+
+
+
 	}
 
 	/**

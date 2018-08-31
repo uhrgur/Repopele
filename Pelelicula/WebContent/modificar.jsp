@@ -46,11 +46,12 @@
 		<select name="Peliculas">
 			<option value="Pelicula1">
 			
-				${ListaP.Titulo}
+				${Peliculas[1].titulo}
+				
 			</option>
 			<option value="Pelicula1">
 			
-				${listaP.Titulo}
+				${listaP.titulo}
 			</option>
 
 
