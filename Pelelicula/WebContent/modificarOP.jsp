@@ -41,30 +41,30 @@
 <br>
 <div class="align-middle dropdown ml-4">
         <form action="SAnadir" method="post">
-            <h2>Introduce la pelicula que quieres añadir papichulo</h2>
+            <h2>Obtener peliculas</h2>
             <div class="c1">Titulo:</div>
-            <div class="c2"><input type="text" name="titulo"></div>
+            <div class="c2"><input type="text" name="titulo" value="${titulo}"></div>
             <br/>
             <div class="c1">Trailer:</div>
-            <div> <input type="text" name="trailer"></div>
+            <div> <input type="text" name="trailer" values=${"Trailer"}></div>
             <br/>
             <div class="c1">Puntuación:</div>
-            <div><input type="text" name="puntuacion"></div>
+            <div><input type="text" name="puntuacion"  values=${"puntuacion"}></div>
             <br/>
             <div class="c1">Categoría:</div>
-            <div><input type="text" name="categoria"></div>
+            <div><input type="text" name="categoria" values=${"categoria"}></div>
             <br/>
             <div class="c1">Año:</div>
-            <div><input type="number" name="ano"></div>
+            <div><input type="number" name="ano" values=${"ano"}></div>
             <br/>
             <div class="c1">Precio:</div>
-            <div><input type="number" step="0.01" name="precio"></div>
+            <div><input type="number" step="0.01" name="precio" values=${"precio"}></div>
             <br/>
             <div class="c1">Portada:</div>
-            <div><input type="text" name="portada"></div>
+            <div><input type="text" name="portada" values=${"portada"}></div>
             <br/>
-            <div class="c1 desc">Descripción:</div>
-            <div class="c2"> <textarea input type="text" name=titulo rows="4" cols="50">
+            <div class="c1 desc" name="descripcion" >Descripción:</div>
+            <div class="c2"> <textarea input type="text" name="titulo" rows="4" cols="50" values=${"portada"}>
             </textarea></div>
             <input type="submit" name="submit" value="enviar">
             <input type="reset" name="reset" value="borrar datos">
