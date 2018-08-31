@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Q {
 
 	public String getqAnadirPelicula(String titulo, String descripcion, String trailer, int puntuacion,
@@ -82,4 +84,11 @@ public class Q {
 
 	}
 
+	public String getqOrdenarCategoria(String categoria) {
+		StringBuilder oc = new StringBuilder();
+		oc.append("SELECT * from peliculas where categoria = ' ");
+		oc.append(categoria);
+		oc.append("'");
+		return oc.toString();
+	}
 }
