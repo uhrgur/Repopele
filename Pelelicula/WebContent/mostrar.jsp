@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <html lang="es">
 
 <head>
@@ -130,7 +132,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="index.jsp">MovieCHEN</a>
+        <a class="navbar-brand" href="mostrar.jsp">MovieCHEN</a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -209,9 +211,23 @@
     <div class="container marketing">
 
 		<!--  LISTA DE TODAS LAS PELICULAS EN LA BBDD -->
-		<p>Lista de peliculass</p>
+		<h1>Lista de peliculas:</h1>>
 		
-		<p>Lista: ${peliculas[0].titulo} fin</p>
+		<c:forEach var="peliculas" items="${peliculas}">
+			
+			<h2>${peliculas.titulo}</h2>
+			<img src="${peliculas.portada}"/>
+			<h3>Precio: ${peliculas.precio}</h3>
+			<h4>Puntuación:</h4>
+			<h3>${peliculas.puntuacion}</h3>
+			<h4>Descripción:</h4>
+			<p>Categoría: ${peliculas.categoria}</p>
+			<p>Año: ${peliculas.ano}</p>
+			<p>${peliculas.descripcion}</p>
+			<p>${peliculas.trailer}</p>
+			
+		
+		</c:forEach>
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
