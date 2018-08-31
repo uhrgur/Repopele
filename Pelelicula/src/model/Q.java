@@ -36,10 +36,13 @@ public class Q {
 		return mostrar;
 	}
 
-	public String getqModificarPelicula(String titulo, String descripcion, String trailer, int puntuacion,
+	public static String getqModificarPelicula(String titulo, String descripcion, String trailer, int puntuacion,
 			String categoria, int anio, float precio, String portada) {
 		StringBuilder sd = new StringBuilder();
-		sd.append("UPDATE peliculas SET descripcion = '");
+		sd.append("UPDATE peliculas SET titulo = '");
+		sd.append(titulo);
+		sd.append("',");
+		sd.append("descripción ='");
 		sd.append(descripcion);
 		sd.append("',");
 		sd.append("trailer ='");
@@ -62,7 +65,8 @@ public class Q {
 		sd.append("'");
 		sd.append("WHERE titulo = '");
 		sd.append(titulo);
-		sd.append("'");
+		sd.append("';");
+		System.out.println("imprimiendo qmod" + sd.toString());
 		return sd.toString();
 	}
 

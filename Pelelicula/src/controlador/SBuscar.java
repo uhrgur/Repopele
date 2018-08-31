@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
 import model.Pelicula;
+import model.Q;
 
 /**
  * Servlet implementation class SBuscar
@@ -38,7 +39,7 @@ public class SBuscar extends HttpServlet {
 		System.out.println("El valor del string busqueda es: " + busqueda);
 		Pelicula y = new Pelicula();
 		y = Dao.daoBuscarPelicula("'" + busqueda + "'");
-
+		Q.getqModificarPelicula("batman 1","hola","trailer",9,"anime",1998,1,"hola" );
 		request.setAttribute("peli", y);
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);
