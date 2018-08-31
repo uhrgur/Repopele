@@ -37,12 +37,12 @@ public class Q {
 	}
 
 	public static String getqModificarPelicula(String titulo, String descripcion, String trailer, int puntuacion,
-			String categoria, int anio, float precio, String portada) {
+			String categoria, int ano, float precio, String portada) {
 		StringBuilder sd = new StringBuilder();
 		sd.append("UPDATE peliculas SET titulo = '");
 		sd.append(titulo);
 		sd.append("',");
-		sd.append("descripci�n ='");
+		sd.append("descripcion ='");
 		sd.append(descripcion);
 		sd.append("',");
 		sd.append("trailer ='");
@@ -54,8 +54,8 @@ public class Q {
 		sd.append("categoria ='");
 		sd.append(categoria);
 		sd.append("',");
-		sd.append("anio ='");
-		sd.append(anio);
+		sd.append("ano ='");
+		sd.append(ano);
 		sd.append("',");
 		sd.append("precio ='");
 		sd.append(precio);
