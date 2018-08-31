@@ -14,9 +14,9 @@ import model.Pelicula;
 //import model.Pelicula;
 import model.Q;
 
-public class Dao implements IDao{
+public class Dao{
 
-	public Pelicula daoBuscarPelicula(String pelele){
+	public static Pelicula daoBuscarPelicula(String pelele){
 		System.out.println("Loading driver...");
 
 		Pelicula peli = null;
@@ -74,7 +74,7 @@ public class Dao implements IDao{
         return peli;
 
 	}
-    	public ArrayList<Pelicula> daoLista(){
+    	public static ArrayList<Pelicula> daoLista(){
     		List<Pelicula> x = new ArrayList<Pelicula>();
     		System.out.println("Loading driver...");
 
@@ -150,7 +150,7 @@ public class Dao implements IDao{
             return (ArrayList<Pelicula>) x;
 
 	}
-    	public void daoModificarPelicula(String elm, Pelicula pelicula){
+    	public static void daoModificarPelicula(String elm, Pelicula pelicula){
 
     		System.out.println("Loading driver...");
 
@@ -204,7 +204,7 @@ public class Dao implements IDao{
             System.out.println("Finalizado procedimiento update");
 
     }
-    	public void daoAnadirPelicula(Pelicula pelicula){
+    	public static void daoAnadirPelicula(Pelicula pelicula){
 
     		System.out.println("Loading driver...");
 
@@ -259,7 +259,7 @@ public class Dao implements IDao{
 
     }
 
-    	public void daoEliminarPelicula(String elm){
+    	public static void daoEliminarPelicula(String elm){
 
     		System.out.println("Loading driver...");
 
