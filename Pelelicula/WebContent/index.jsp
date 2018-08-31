@@ -130,7 +130,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="#">Carousel</a>
+        <a class="navbar-brand" href="index.jsp">MovieCHEN</a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -161,7 +161,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img class="first-slide" src="/images/img1.jpg" alt="First slide">
+                <img class="first-slide" src="images/img1.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-left">
                         <h1>Example headline.</h1>
@@ -171,7 +171,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="second-slide" src="/images/img5.jpg" alt="Second slide">
+                <img class="second-slide" src="images/img5.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block">
                         <h1>Another example headline.</h1>
@@ -181,7 +181,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="third-slide" src="/images/img3.jpg" alt="Third slide">
+                <img class="third-slide" src="images/img3.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-right">
                         <h1>One more for good measure.</h1>
@@ -215,21 +215,21 @@
             	<form action="SBuscar" method="post">
             	<input type="submit" value="enviar">
             	</form>
-                <img class="" src="/images/lupa.png" alt="Generic placeholder image" width="200" height="200">
+                <img class="" src="images/lupa.png" alt="Generic placeholder image" width="200" height="200">
                 <h2>Busqueda</h2>
                 <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-xl-4">
-                <img class="" src="/images/star.png" alt="Generic placeholder image" width="200" height="200">
+                <img class="" src="images/star.png" alt="Generic placeholder image" width="200" height="200">
                 <h2>Puntuación</h2>
                 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-xl-4">
-                <img class="" src="/images/carrito.png" alt="Generic placeholder image" width="200" height="200">
+                <img class="" src="images/carrito.png" alt="Generic placeholder image" width="200" height="200">
                 <h2>Compra</h2>
                 <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
