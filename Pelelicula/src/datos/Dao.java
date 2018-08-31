@@ -158,43 +158,38 @@ public class Dao {
     		
     		System.out.println("Loading driver...");
     		
+            String tit = pelicula.getTitulo();
+            int ano = pelicula.getAno();
+            String cat = pelicula.getCategoria();
+            String desc = pelicula.getDescripcion();
+            String port = pelicula.getPortada();
+            float precio = pelicula.getPrecio();
+            int punt = (int) pelicula.getPuntuacion();
+            String tra = pelicula.getTrailer();
+            
+            String query = Q.getqModificarPelicula(tit, desc, tra, punt, cat, ano, precio, port);
             Connection con = null;
             PreparedStatement pst = null;
             ResultSet rs = null;
 
-            pelicula.getTitulo()
-            pelicula.getAno()
-            pelicula.getCategoria()
-            pelicula.getDescripcion()
-            pelicula.getPortada()
-            pelicula.getPrecio()
-            pelicula.getPuntuacion()
-            pelicula.get
-            
-            String query = Q.getqModificarPelicula();
-            
-            
-            
             try {
                 
-            	
-            	
+
             	con = ConexionDB.getConection();
-                pst = con.prepareStatement("UPDATE");
+                pst = con.prepareStatement(query);
                 rs = pst.executeQuery();
 
                 while (rs.next()) {
                 	
-                	String titulo = rs.getString("titulo"); 
-                	String descripcion = rs.getString("descripcion");
-                	String trailer = rs.getString("trailer");
-                	float puntuacion = rs.getFloat("puntuacion");
-                	String categoria = rs.getString("categoria");
-                	int ano = rs.getInt("ano");
-        			float precio = rs.getFloat("precio");
-        			String portada = rs.getString("portada");
+                	String ptitulo = rs.getString("titulo"); 
+                	String pdescripcion = rs.getString("descripcion");
+                	String ptrailer = rs.getString("trailer");
+                	float ppuntuacion = rs.getFloat("puntuacion");
+                	String pcategoria = rs.getString("categoria");
+                	int pano = rs.getInt("ano");
+        			float pprecio = rs.getFloat("precio");
+        			String pportada = rs.getString("portada");
         			
-                    new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada);
                     
                 }
                 
