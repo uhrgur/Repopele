@@ -178,7 +178,7 @@ public class Dao {
             	con = ConexionDB.getConection();
                 pst = con.prepareStatement(query);
                 rs = pst.executeQuery();
-
+                System.out.println("PSTQuery");
                 while (rs.next()) {
                 	
                 	System.out.println("Query ejecutada.");
@@ -209,7 +209,7 @@ public class Dao {
                 
             }
             
-        //RETURN
+            System.out.println("Finalizado procedimiento update");
 
     }
 }
