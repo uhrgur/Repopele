@@ -42,7 +42,7 @@ public class Q {
 		sd.append("UPDATE peliculas SET titulo = '");
 		sd.append(titulo);
 		sd.append("',");
-		sd.append("descripción ='");
+		sd.append("descripciï¿½n ='");
 		sd.append(descripcion);
 		sd.append("',");
 		sd.append("trailer ='");
@@ -66,7 +66,7 @@ public class Q {
 		sd.append("WHERE titulo = '");
 		sd.append(titulo);
 		sd.append("';");
-		System.out.println("imprimiendo qmod" + sd.toString());
+		System.out.println("Imprimiendo return getqModificar: " + sd.toString());
 		return sd.toString();
 	}
 
