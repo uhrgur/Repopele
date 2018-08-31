@@ -45,6 +45,7 @@ public class SModificar extends HttpServlet {
 		Pelicula shit = new Pelicula("Ensalada de pepino en el instituto femenino","Remitase al titulo","Esto es el trailer.coma",10F,"Infantil",1992,10.10F,"portada.url");
 		
 		Dao.daoModificarPelicula("Batman 1",shit);
+		request.setAttribute("b1", shit);
 		System.out.println("Jua");
 		
 		RequestDispatcher view = request.getRequestDispatcher("modificar.jsp");

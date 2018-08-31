@@ -44,8 +44,13 @@
 		<h2>Peliculas para modificar</h2>
 		<select name="Peliculas">
 			<option value="Pelicula1">
+				
 				<%
               
+                Iterator it = b1.iterator();
+                while (it.hasNext()) {
+                    out.print("<br>try: " + it.next());
+                }
             %>
 			</option>
 
