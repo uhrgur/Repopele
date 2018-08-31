@@ -40,7 +40,10 @@
 <br>
 <br>
 <div class="align-middle dropdown ml-4">
-        <form action="SAnadir" method="post">
+
+
+        <form action="SModificar" method="post">
+        <select name="peliculas">
             <h2>Obtener peliculas</h2>
             <div class="c1">Titulo:</div>
             <div class="c2"><input type="text" name="titulo" value="${titulo}"></div>
@@ -68,6 +71,7 @@
             </textarea></div>
             <input type="submit" name="submit" value="enviar">
             <input type="reset" name="reset" value="borrar datos">
+        </select>
         </form>
     </div>
 </body>
