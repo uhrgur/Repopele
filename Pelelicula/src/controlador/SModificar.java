@@ -52,8 +52,6 @@ public class SModificar extends HttpServlet {
 	
 		List listaP = new Dao().daoLista();
 		request.setAttribute("ListaP", listaP);
-	
-		
 		RequestDispatcher view = request.getRequestDispatcher("modificar.jsp");
 		view.forward(request, response);
 		

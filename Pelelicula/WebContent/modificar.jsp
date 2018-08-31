@@ -41,12 +41,16 @@
 	<br>
 	<br>
 
-	<form action="SModificar" method="post">
+	<form action="modificarOP.jsp" method="post">
 		<h2>Peliculas para modificar</h2>
 		<select name="Peliculas">
 			<option value="Pelicula1">
-				
-				${listaP};
+			
+				${ListaP.Titulo}
+			</option>
+			<option value="Pelicula1">
+			
+				${listaP.Titulo}
 			</option>
 
 
