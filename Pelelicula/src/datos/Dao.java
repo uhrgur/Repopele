@@ -170,20 +170,18 @@ public class Dao {
             String query = Q.getqModificarPelicula(elm, tit, desc, tra, punt, cat, ano, precio, port);
             Connection con = null;
             PreparedStatement pst = null;
-            ResultSet rs = null;
+            boolean rs = false;
 
             try {
                 
 
             	con = ConexionDB.getConection();
                 pst = con.prepareStatement(query);
-                rs = pst.executeQuery();
+                rs = pst.execute();
                 System.out.println("PSTQuery");
-                while (rs.next()) {
                 	
                 	System.out.println("Query ejecutada.");
                     
-                }
                 
             } catch (SQLException ex) {
                     Logger lgr = Logger.getLogger(Dao.class.getName());
@@ -192,9 +190,7 @@ public class Dao {
             } finally {
             	        	
                 try {
-                    if (rs != null) {
-                        rs.close();
-                    }
+
                     if (pst != null) {
                         pst.close();
                     }
