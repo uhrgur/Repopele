@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,10 +14,9 @@ import model.Pelicula;
 //import model.Pelicula;
 import model.Q;
 
-public class Dao {
+public class Dao implements IDao{
 	
-	public static Pelicula daoBuscarPelicula(String pelele){
-
+	public Pelicula daoBuscarPelicula(String pelele){
 		System.out.println("Loading driver...");
 		
 		Pelicula peli = null;
@@ -76,7 +74,7 @@ public class Dao {
         return peli;
         
 	}
-    	public static ArrayList<Pelicula> daoLista(){
+    	public ArrayList<Pelicula> daoLista(){
     		List<Pelicula> x = new ArrayList<Pelicula>();
     		System.out.println("Loading driver...");
 
@@ -152,7 +150,7 @@ public class Dao {
             return (ArrayList<Pelicula>) x;
 
 	}
-    	public static void daoModificarPelicula(String elm, Pelicula pelicula){
+    	public void daoModificarPelicula(String elm, Pelicula pelicula){
     		
     		System.out.println("Loading driver...");
     		
@@ -206,8 +204,7 @@ public class Dao {
             System.out.println("Finalizado procedimiento update");
 
     }
-    	
-public static void daoAnadirPelicula(Pelicula pelicula){
+    	public void daoAnadirPelicula(Pelicula pelicula){
     		
     		System.out.println("Loading driver...");
     		
@@ -262,7 +259,7 @@ public static void daoAnadirPelicula(Pelicula pelicula){
 
     }
     	
-    	public static void daoEliminarPelicula(String elm){
+    	public void daoEliminarPelicula(String elm){
     		
     		System.out.println("Loading driver...");
             
@@ -307,4 +304,6 @@ public static void daoAnadirPelicula(Pelicula pelicula){
             System.out.println("Finalizado procedimiento eliminar");
 
     }
+
+    	
 }
