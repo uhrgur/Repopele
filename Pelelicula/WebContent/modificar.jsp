@@ -43,13 +43,7 @@
 	<h2>Peliculas para modificar</h2>
 	<select name="Peliculas">	  	 
 	
-	 <%              List styles = (List) request.getAttribute("styles");
-                Iterator it = styles.iterator();
-                while (it.hasNext()) {
-                    out.print("<br>try: " + it.next());
-                }
-            %>
-	
+		
 		<input type="submit" name="submit" value="enviar">
 		<input type="reset" name="reset" value="borrar datos">
 	

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
+import model.Pelicula;
 /**
  * Servlet implementation class SModificar
  */
@@ -28,7 +29,7 @@ public class SModificar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String titulo = request.getParameter(titulo);
+		/*String titulo = request.getParameter(titulo);
 		String descripcion = request.getParameter(descripcion);
 		String trailer = request.getParameter(trailer);
 		float puntuacion = Float.parseFloat(request.getParameter("puntuacion"));
@@ -38,12 +39,15 @@ public class SModificar extends HttpServlet {
 		String portada = request.getParameter(portada);
 		String m = request.getParameter("submit");
 		System.out.println("cuidado que m se imprime en 3, 2 , 1 ..." + m);
-		
+		*/
 		//RECOGER DATOS USUARIO
 		
-		Dao.daoModificarPelicula();
+		Pelicula shit = new Pelicula("Ensalada de pepino en el instituto femenino","Remitase al titulo","Esto es el trailer.coma",10F,"Infantil",1992,10.10F,"portada.url");
 		
-		RequestDispatcher view = request.getRequestDispatcher("Modificar.jsp");
+		Dao.daoModificarPelicula("Batman 1",shit);
+		System.out.println("Jua");
+		
+		RequestDispatcher view = request.getRequestDispatcher("modificar.jsp");
 		view.forward(request, response);
 		
 		
