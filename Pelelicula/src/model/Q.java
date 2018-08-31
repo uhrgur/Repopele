@@ -95,4 +95,12 @@ public class Q {
 		oc.append("'");
 		return oc.toString();
 	}
+	
+	public String getqOrdenarPrecio(String precio) {
+		StringBuilder op = new StringBuilder();
+		op.append("SELECT * from peliculas where precio = ' ");
+		op.append(precio);
+		op.append("'");
+		return op.toString();
+	}
 }
