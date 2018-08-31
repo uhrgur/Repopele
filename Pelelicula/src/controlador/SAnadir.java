@@ -14,7 +14,7 @@ import datos.Dao;
 /**
  * Servlet implementation class SAnadir
  */
-@WebServlet("/anadirBD")
+@WebServlet("/SAnadir")
 public class SAnadir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,9 +27,15 @@ public class SAnadir extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String a = request.getParameter("submit");
-		System.out.println("Imprimiendo a" + a);
+		String titulo = request.getParameter("titulo");
+		String trailer = request.getParameter("trailer");
+		float puntuacion = Float.parseFloat(request.getParameter("puntuacion"));
+		String categoria = request.getParameter("categoria");
+		int ano = Integer.parseInt(request.getParameter("ano"));
+		float precio = Float.parseFloat(request.getParameter("precio"));
+		String portada = request.getParameter("portada");
+		String descripcion = request.getParameter("descripcion");
+		
 		
 		// FALTA RECOGER DATO DEL PUTO USUARIO MONGOL :)
 		

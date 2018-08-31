@@ -21,6 +21,7 @@ import model.Pelicula;
 public class SBuscar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,8 +40,11 @@ public class SBuscar extends HttpServlet {
 		Pelicula y = new Pelicula();
 		y = Dao.daoBuscarPelicula("'" + busqueda + "'");
 
-		System.out.println("Imprimiendo objeto traido del dao " + y);
-		
+		while(it.hasNext()){
+		  System.out.println(it.next());
+		}
+
+		request.setAttribute("peli", y);
 		RequestDispatcher view = request.getRequestDispatcher("Buscar.jsp");
 		view.forward(request, response);
 	}

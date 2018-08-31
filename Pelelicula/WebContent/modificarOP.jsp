@@ -4,16 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cuestionario modificar</title>
+<title>Modificar Peliculas</title>
 </head>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="style.css">
+
 <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="index.jsp">MovieCHEN</a>
+        <a class="navbar-brand" href="#">Carousel</a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -22,10 +23,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="anadir.jsp">Añadir</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="modificar.jsp">Modificar</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="eliminar.jsp">Eliminar</a>
                 </li>
             </ul>
@@ -35,36 +36,39 @@
             </form>
         </div>
     </nav>
-	<br>
-	<br>
-	<br>
-			
-	<form action="SModificar" method="post" >
-	<h2>Peliculas para modificar</h2>
-	<select name="Peliculas">
-	  	Titulo:
-	    <option type="text" name="titulo" value="${titulo}">
-	     Descripción
-	    <option type="text" name="descripción" value=${"descripción"}>
-	     Trailer
-	    <option type="text" name="trailer" values=${"Trailer"}>
-	     Puntuación
-	    <option type="text" name="puntuacion" values=${"puntuacion"}>
-	     Categoría
-	    <option type="text" name="categoria" values=${"categoria"}>
-	     Año
-	    <option type="text" name="ano" values=${"ano"}>
-	     Precio
-	    <option type="text" name="precio" values=${"precio"}>
-	     Portada
-	    <option type="text" name="portada" values=${"portada"}>
-	    <br>
-		<input type="submit" name="submit" value="enviar">
-		<input type="reset" name="reset" value="borrar datos">
-	
-	</select>
-     	
-	</form>
-	
+<br>
+<br>
+<br>
+<div class="align-middle dropdown ml-4">
+        <form action="SAnadir" method="post">
+            <h2>Introduce la pelicula que quieres añadir papichulo</h2>
+            <div class="c1">Titulo:</div>
+            <div class="c2"><input type="text" name="titulo"></div>
+            <br/>
+            <div class="c1">Trailer:</div>
+            <div> <input type="text" name="trailer"></div>
+            <br/>
+            <div class="c1">Puntuación:</div>
+            <div><input type="text" name="puntuacion"></div>
+            <br/>
+            <div class="c1">Categoría:</div>
+            <div><input type="text" name="categoria"></div>
+            <br/>
+            <div class="c1">Año:</div>
+            <div><input type="number" name="ano"></div>
+            <br/>
+            <div class="c1">Precio:</div>
+            <div><input type="number" step="0.01" name="precio"></div>
+            <br/>
+            <div class="c1">Portada:</div>
+            <div><input type="text" name="portada"></div>
+            <br/>
+            <div class="c1 desc">Descripción:</div>
+            <div class="c2"> <textarea input type="text" name=titulo rows="4" cols="50">
+            </textarea></div>
+            <input type="submit" name="submit" value="enviar">
+            <input type="reset" name="reset" value="borrar datos">
+        </form>
+    </div>
 </body>
 </html>

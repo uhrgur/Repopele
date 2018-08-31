@@ -8,8 +8,9 @@
 </head>
 <body>
 
-	<form action="" id="eliminarPelicula">
-	<select name="movielist" form="movieform">
+<h1>Seleccione una película de la siguiente lista para ser eliminada.</h1>
+	<form action="SEliminar" id="eliminarPelicula">
+	<select name="titulo">
 	  <option value=""></option>
 	  <option value=""></option>
 	  <option value=""></option>
