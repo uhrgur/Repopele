@@ -154,7 +154,7 @@ public class Dao {
             return (ArrayList<Pelicula>) x;
 
 	}
-    	public static void SModificar(String elm, Pelicula pelicula){
+    	public static void daoModificarPelicula(String elm, Pelicula pelicula){
     		
     		System.out.println("Loading driver...");
     		
