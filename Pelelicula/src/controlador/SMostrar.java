@@ -39,12 +39,6 @@ public class SMostrar extends HttpServlet {
 		
 		System.out.println("--Servlet: Estamos en mostrar lista"+lista);
 		
-		/*Iterator<Pelicula> itr = lista.iterator();
-		while(itr.hasNext()){
-			
-			System.out.println("lista: "+ itr.next());
-		}*/
-		
 		
 		request.setAttribute("peliculas", lista);
 		RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");

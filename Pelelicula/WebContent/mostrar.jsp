@@ -211,7 +211,7 @@
 		<!--  LISTA DE TODAS LAS PELICULAS EN LA BBDD -->
 		<p>Lista de peliculass</p>
 		
-		<p>Lista: ${peliculas} fin</p>
+		<p>Lista: ${peliculas[0].titulo} fin</p>
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
