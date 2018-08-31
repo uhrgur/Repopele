@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 
 import model.Pelicula;
 //import model.Pelicula;
+import model.Q;
 
 public class Dao {
 	
@@ -153,17 +154,31 @@ public class Dao {
             return (ArrayList<Pelicula>) x;
 
 	}
-    	public static void SModificar(String elm){
+    	public static void SModificar(String elm, Pelicula pelicula){
     		
-    		List<Pelicula> x = new ArrayList<Pelicula>();
     		System.out.println("Loading driver...");
     		
             Connection con = null;
             PreparedStatement pst = null;
             ResultSet rs = null;
 
+            pelicula.getTitulo()
+            pelicula.getAno()
+            pelicula.getCategoria()
+            pelicula.getDescripcion()
+            pelicula.getPortada()
+            pelicula.getPrecio()
+            pelicula.getPuntuacion()
+            pelicula.get
+            
+            String query = Q.getqModificarPelicula();
+            
+            
+            
             try {
                 
+            	
+            	
             	con = ConexionDB.getConection();
                 pst = con.prepareStatement("UPDATE");
                 rs = pst.executeQuery();
@@ -178,9 +193,8 @@ public class Dao {
                 	int ano = rs.getInt("ano");
         			float precio = rs.getFloat("precio");
         			String portada = rs.getString("portada");
-                    
-                    x.add(new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada));
-                    System.out.println(x);
+        			
+                    new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada);
                     
                 }
                 

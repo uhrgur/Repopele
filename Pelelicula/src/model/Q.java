@@ -62,7 +62,8 @@ public class Q {
 		sd.append("'");
 		sd.append("WHERE titulo = '");
 		sd.append(titulo);
-		sd.append("'");
+		sd.append("';");
+		System.out.println("Imprimiendo return getqModificar: " + sd.toString());
 		return sd.toString();
 	}
 

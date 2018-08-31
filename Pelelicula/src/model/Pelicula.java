@@ -1,5 +1,5 @@
 package model;
-import java.util.*;
+
 public class Pelicula {
 
 	private String titulo;  //Nombre de la pelicula
