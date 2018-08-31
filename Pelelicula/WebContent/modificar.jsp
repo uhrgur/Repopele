@@ -38,27 +38,18 @@
 	<br>
 	<br>
 	<br>
-			
+	
 	<form action="SModificar" method="post" >
 	<h2>Peliculas para modificar</h2>
-	<select name="Peliculas">
-	  	Titulo:
-	    <option type="text" name="titulo" value="${titulo}">
-	     Descripción
-	    <option type="text" name="descripción" value=${"descripción"}>
-	     Trailer
-	    <option type="text" name="trailer" values=${"Trailer"}>
-	     Puntuación
-	    <option type="text" name="puntuacion" values=${"puntuacion"}>
-	     Categoría
-	    <option type="text" name="categoria" values=${"categoria"}>
-	     Año
-	    <option type="text" name="ano" values=${"ano"}>
-	     Precio
-	    <option type="text" name="precio" values=${"precio"}>
-	     Portada
-	    <option type="text" name="portada" values=${"portada"}>
-	    <br>
+	<select name="Peliculas">	  	 
+	
+	 <%              List styles = (List) request.getAttribute("styles");
+                Iterator it = styles.iterator();
+                while (it.hasNext()) {
+                    out.print("<br>try: " + it.next());
+                }
+            %>
+	
 		<input type="submit" name="submit" value="enviar">
 		<input type="reset" name="reset" value="borrar datos">
 	
