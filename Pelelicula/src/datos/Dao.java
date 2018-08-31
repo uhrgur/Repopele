@@ -17,8 +17,6 @@ import model.Q;
 
 public class Dao {
 	
-	
-	//Sera pelicula pero estoy realizando pruebas con void
 	public static Pelicula daoBuscarPelicula(String pelele){
 
 		System.out.println("Loading driver...");
@@ -206,6 +204,51 @@ public class Dao {
             }
             
             System.out.println("Finalizado procedimiento update");
+
+    }
+    	public static void daoEliminarPelicula(String elm){
+    		
+    		System.out.println("Loading driver...");
+            
+            String query = Q.getqEliminarPelicula(elm);
+            Connection con = null;
+            PreparedStatement pst = null;
+            boolean rs = false;
+
+            try {
+                
+
+            	con = ConexionDB.getConection();
+                pst = con.prepareStatement(query);
+                rs = pst.execute();
+                System.out.println("ELIMINARQuery");
+                	
+                	System.out.println("Query eliminar ejecutada.");
+                    
+                
+            } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+            } finally {
+            	        	
+                try {
+
+                    if (pst != null) {
+                        pst.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+
+                } catch (SQLException ex) {
+                    Logger lgr = Logger.getLogger(Dao.class.getName());
+                    lgr.log(Level.WARNING, ex.getMessage(), ex);
+                }
+                
+            }
+            
+            System.out.println("Finalizado procedimiento eliminar");
 
     }
 }
