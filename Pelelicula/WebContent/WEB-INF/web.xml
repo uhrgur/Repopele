@@ -3,17 +3,9 @@
   <display-name>Pelelicula</display-name>
 
   <welcome-file-list>
+  	<welcome-file>/SMostrar</welcome-file>
+  	<welcome-file>\SMostrar</welcome-file>
     <welcome-file>SMostrar</welcome-file>
   </welcome-file-list>
-  
-    <servlet>
-    <servlet-name>SMostrar</servlet-name>
-    <servlet-class>controlador.SMostrar</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SMostrar</servlet-name>
-    <url-pattern></url-pattern>
-  </servlet-mapping>
-
   
 </web-app>

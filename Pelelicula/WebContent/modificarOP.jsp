@@ -18,16 +18,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="SMostrar">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="anadir.jsp">Añadir</a>
+                    <a class="nav-link" href="SAnadir">Añadir</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="modificar.jsp">Modificar</a>
+                    <a class="nav-link" href="SModificar">Modificar</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="eliminar.jsp">Eliminar</a>
+                    <a class="nav-link" href="SEliminar">Eliminar</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
