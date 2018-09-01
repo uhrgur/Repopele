@@ -1,6 +1,6 @@
 package model;
 
-public class Pelicula {
+public class Pelicula implements IPelicula{
 
 	private String titulo;  //Nombre de la pelicula
 	private String descripcion; //Sinopsis de la pelicula
@@ -119,6 +119,12 @@ public class Pelicula {
 
 	public void setPortada(String portada) {
 		this.portada = portada;
+	}
+
+	@Override
+	public Pelicula Pelicula() {
+
+		return null;
 	}
 
 

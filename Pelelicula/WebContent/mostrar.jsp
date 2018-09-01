@@ -220,7 +220,7 @@
         <c:forEach var="peliculas" items="${peliculas}">
         <div class="row featurette">
             <div class="col-xl-5">
-                <img class="featurette-image img-fluid mx-auto" src="${peliculas.portada}" alt="Portada"/>
+                <img class="featurette-image img-fluid mx-auto" style="width:100%;" src="${peliculas.portada}" alt="Portada"/>
             </div>
             <div class="col-xl-7">
                 <h2>${peliculas.titulo}</h2>
