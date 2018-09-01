@@ -211,14 +211,13 @@
     <div class="container marketing">
 
 		<!--  LISTA DE TODAS LAS PELICULAS EN LA BBDD -->
-		<h1>Lista de peliculas:</h1>>
+		<h1>Lista de peliculas:</h1>
 
         <!-- Three columns of text below the carousel -->
-        <div class="row">
         
         
+        <hr class="featurette-divider">
         <c:forEach var="peliculas" items="${peliculas}">
-			
         <div class="row featurette">
             <div class="col-md-5">
                 <img class="featurette-image img-fluid mx-auto" src="${peliculas.portada}" alt="Portada"/>
@@ -237,9 +236,7 @@
 				${peliculas.trailer}
 		 -->
 
-		</div>
-
-
+        <hr class="featurette-divider">
 		
 		</c:forEach>
 
