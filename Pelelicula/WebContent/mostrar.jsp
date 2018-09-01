@@ -219,12 +219,13 @@
         <hr class="featurette-divider">
         <c:forEach var="peliculas" items="${peliculas}">
         <div class="row featurette">
-            <div class="col-md-5">
+            <div class="col-xl-5">
                 <img class="featurette-image img-fluid mx-auto" src="${peliculas.portada}" alt="Portada"/>
             </div>
-            <div class="col-md-7">
-                <h2 class="featurette-heading">${peliculas.titulo}</h2>
+            <div class="col-xl-7">
+                <h2>${peliculas.titulo}</h2>
                 <p class="lead">${peliculas.descripcion}</p>
+                ${peliculas.trailer}
             </div>
         </div>
         <!-- 
