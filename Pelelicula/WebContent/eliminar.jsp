@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -41,15 +43,15 @@
     <br>
 
 <h1>Seleccione una película de la siguiente lista para ser eliminada.</h1>
+
 	<form action="SEliminar" id="eliminarPelicula">
-	<select name="titulo">
-	  <option value=""></option>
-	  <option value=""></option>
-	  <option value=""></option>
-	  <option value=""></option>
-	</select>	
+	  
+	  <select>  </select>
+	
+	
+	
 	<input type="hidden" name="flag" value="1">
-    <input type="submit" name="submit" value="enviar">
+    <input type="submit" name="submit" value="borrar">
 	</form>
 
 </body>
