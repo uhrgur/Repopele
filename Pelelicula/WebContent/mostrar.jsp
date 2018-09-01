@@ -212,55 +212,36 @@
 
 		<!--  LISTA DE TODAS LAS PELICULAS EN LA BBDD -->
 		<h1>Lista de peliculas:</h1>>
-		
-		<c:forEach var="peliculas" items="${peliculas}">
-			
-			<h2>${peliculas.titulo}</h2>
-			<img src="${peliculas.portada}"/>
-			<h3>Precio: ${peliculas.precio}</h3>
-			<h4>Puntuación:</h4>
-			<h3>${peliculas.puntuacion}</h3>
-			<h4>Descripción:</h4>
-			<p>Categoría: ${peliculas.categoria}</p>
-			<p>Año: ${peliculas.ano}</p>
-			<p>${peliculas.descripcion}</p>
-			<p>${peliculas.trailer}</p>
-			
-		
-		</c:forEach>
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
-
-            <div class="col-xl-4">
-            	<form action="SBuscar" method="post">
-            	<input type="hidden" name="titulo" value="Batman 1">
-            	<input type="submit" value="enviar">
-            	</form>
-                <img class="" src="images/lupa.png" alt="Generic placeholder image" width="200" height="200">
-                <h2>Busqueda</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        
+        
+        <c:forEach var="peliculas" items="${peliculas}">
+			
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" src="${peliculas.portada}" alt="Portada"/>
             </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-xl-4">
-                <img class="" src="images/star.png" alt="Generic placeholder image" width="200" height="200">
-                <h2>Puntuación</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">${peliculas.titulo}</h2>
+                <p class="lead">${peliculas.descripcion}</p>
             </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-xl-4">
-                <img class="" src="images/carrito.png" alt="Generic placeholder image" width="200" height="200">
-                <h2>Compra</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <!-- /.col-lg-4 -->
-
         </div>
-        <!-- /.row -->
+        <!-- 
+                ${peliculas.categoria}
+				${peliculas.ano}
+                ${peliculas.descripcion}
+                ${peliculas.precio}
+				${peliculas.puntuacion}
+				${peliculas.trailer}
+		 -->
 
+		</div>
+
+
+		
+		</c:forEach>
 
         <!-- START THE FEATURETTES -->
 
