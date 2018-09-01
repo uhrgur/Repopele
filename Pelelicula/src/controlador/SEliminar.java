@@ -1,6 +1,8 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datos.Dao;
+import model.Pelicula;
 
 /**
  * Servlet implementation class SEliminar
@@ -38,7 +41,12 @@ public class SEliminar extends HttpServlet {
 			String titulo = request.getParameter("titulo");
 
 			Dao.daoEliminarPelicula(titulo);
-
+			List<Pelicula> lista = new ArrayList<Pelicula>();
+			
+			lista = Dao.daoLista();
+			
+			
+			request.setAttribute("Peliculas", lista);
 			RequestDispatcher view = request.getRequestDispatcher("eliminar.jsp");
 			view.forward(request, response);
 		} else {
