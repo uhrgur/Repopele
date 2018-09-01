@@ -22,13 +22,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="mostrar.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="anadir.jsp">Añadir</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="modificar.jsp">Modificar</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="eliminar.jsp">Eliminar</a>
                 </li>
             </ul>
