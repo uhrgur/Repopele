@@ -17,11 +17,11 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="#">Carousel</a>
+        <a class="navbar-brand" href="mostrar.jsp">MovieCHEN</a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="mostrar.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="anadir.jsp">Añadir</a>
