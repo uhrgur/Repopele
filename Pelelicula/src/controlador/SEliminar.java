@@ -41,15 +41,13 @@ public class SEliminar extends HttpServlet {
 			String titulo = request.getParameter("titulo");
 
 			Dao.daoEliminarPelicula(titulo);
-			List<Pelicula> lista = new ArrayList<Pelicula>();
-			
-			lista = Dao.daoLista();
-			
-			
-			request.setAttribute("Peliculas", lista);
-			RequestDispatcher view = request.getRequestDispatcher("eliminar.jsp");
+
+			RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
 			view.forward(request, response);
 		} else {
+			List<Pelicula> lista = new ArrayList<Pelicula>();
+			lista = Dao.daoLista();
+			request.setAttribute("peliculas", lista);
 			RequestDispatcher view = request.getRequestDispatcher("eliminar.jsp");
 			view.forward(request, response);
 		}
