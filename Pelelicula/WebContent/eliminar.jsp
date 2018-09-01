@@ -44,13 +44,18 @@
 
 <h1>Seleccione una película de la siguiente lista para ser eliminada.</h1>
 
-        <c:forEach var="peliculas" items="${peliculas}">
-        ${peliculas.titulo}
-        </c:forEach>
+      
 
 	<form action="SEliminar" id="eliminarPelicula">
 	  
-	  <select>  </select>
+	  <select> 
+	  <c:forEach var="peliculas" items="${peliculas}">
+        <option>${peliculas.titulo}</option>
+        
+        </c:forEach>
+	  
+	  
+	  </select>
 	
 	
 	
