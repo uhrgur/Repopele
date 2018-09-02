@@ -48,9 +48,9 @@
 
 	<form action="SEliminar" id="eliminarPelicula">
 	  
-	  <select> 
+	  <select name="borrar"> 
 	  <c:forEach var="peliculas" items="${peliculas}">
-        <option>${peliculas.titulo}</option>
+        <option value="${peliculas.titulo}">${peliculas.titulo}</option>
         
         </c:forEach>
 	  

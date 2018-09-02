@@ -275,7 +275,6 @@ public class Dao{
                 pst = con.prepareStatement(query);
                 rs = pst.execute();
                 System.out.println("ELIMINARQuery");
-
                 	System.out.println("Query eliminar ejecutada.");
 
 

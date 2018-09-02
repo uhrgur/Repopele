@@ -37,9 +37,9 @@ public class SEliminar extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		if (request.getParameter("flag1") != null) {
-			String titulo = request.getParameter("titulo");
-
+		if (request.getParameter("flag") != null) {
+			String titulo = request.getParameter("borrar");
+			
 			Dao.daoEliminarPelicula(titulo);
 
 			RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
