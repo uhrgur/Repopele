@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*" %>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -43,16 +44,12 @@
 
 	<form action="modificarOP.jsp" method="post">
 		<h2>Peliculas para modificar</h2>
-		<select name="Peliculas">
-			<option value="Pelicula1">
-			
-				${Peliculas[1].titulo}
-				
-			</option>
-			<option value="Pelicula1">
-			
-				${listaP.titulo}
-			</option>
+		<select name="modificar">
+			<c:forEach var="peli" items="${peliculas}">
+				<option value="${peli.titulo}">${peli.titulo}</option>
+
+			</c:forEach>
+
 
 
 			<input type="submit" name="submit" value="enviar">

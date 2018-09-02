@@ -16,20 +16,20 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="mostrar.jsp">MovieCHEN</a>
+        <a class="navbar-brand" href="SMostrar">MovieCHEN</a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="mostrar.jsp">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="SMostrar">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="anadir.jsp">Añadir</a>
+                    <a class="nav-link" href="SAnadir">Añadir</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="modificar.jsp">Modificar</a>
+                    <a class="nav-link" href="SModificar">Modificar</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="eliminar.jsp">Eliminar</a>
+                    <a class="nav-link" href="SEliminar">Eliminar</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">

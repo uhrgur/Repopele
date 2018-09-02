@@ -42,7 +42,7 @@ public class SEliminar extends HttpServlet {
 			
 			Dao.daoEliminarPelicula(titulo);
 
-			RequestDispatcher view = request.getRequestDispatcher("mostrar.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("SMostrar");
 			view.forward(request, response);
 		} else {
 			List<Pelicula> lista = new ArrayList<Pelicula>();
