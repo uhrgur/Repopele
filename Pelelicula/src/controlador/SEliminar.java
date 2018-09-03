@@ -15,6 +15,7 @@ import datos.Dao;
 import model.Pelicula;
 
 /**
+ * @author Edgar Arabaolaza
  * Servlet implementation class SEliminar
  */
 @WebServlet("/SEliminar")
@@ -24,19 +25,33 @@ public class SEliminar extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
+	
 	public SEliminar() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+		// --------------------
+		// Atributos
+		// --------------------
+		
+		/**
+		 * Lógica para decidir dispatcher.
+		 * 
+		 * @param flag
+		 * 			  Se verifica si existe la variable "flag"
+		 * 
+		 * @param titulo
+		 *            Se guarda aquí la película a eliminar.
+		 *            
+		 */
+		
 		if (request.getParameter("flag") != null) {
 			String titulo = request.getParameter("borrar");
 			
@@ -44,7 +59,17 @@ public class SEliminar extends HttpServlet {
 
 			RequestDispatcher view = request.getRequestDispatcher("SMostrar");
 			view.forward(request, response);
-		} else {
+		} 
+		
+		/**
+		 * Si no se ha realizado el formulario:
+		 * 
+		 * @param lista
+		 *            Recoge la información de la base de datos y la envía a eliminar.jsp.
+		 *            
+		 */
+		
+		else {
 			List<Pelicula> lista = new ArrayList<Pelicula>();
 			lista = Dao.daoLista();
 			request.setAttribute("peliculas", lista);
@@ -57,9 +82,9 @@ public class SEliminar extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

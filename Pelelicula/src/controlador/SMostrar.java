@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import datos.Dao;
 import jdk.management.resource.internal.inst.SocketOutputStreamRMHooks;
 import model.Pelicula;
-/**
- * Servlet implementation class SMostrar
- */
+
 @WebServlet("/SMostrar")
 public class SMostrar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,7 +24,6 @@ public class SMostrar extends HttpServlet {
      */
     public SMostrar() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

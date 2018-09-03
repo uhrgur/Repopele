@@ -126,14 +126,5 @@ public class Pelicula implements IPelicula{
 
 		return null;
 	}
-
-
-
-	//Fin Setters y Getters
-	
-	
-	
-	
-	
 	
 }
