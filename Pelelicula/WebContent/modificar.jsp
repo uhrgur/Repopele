@@ -42,20 +42,18 @@
 	<br>
 	<br>
 
-	<form action="modificarOP.jsp" method="post">
+	<form action="SModificar" method="post">
 		<h2>Peliculas para modificar</h2>
-		<select name="modificar">
-			<c:forEach var="peli" items="${peliculas}">
-				<option value="${peli.titulo}">${peli.titulo}</option>
+		
+		 <select name="modificar"> 
+	  <c:forEach var="peliculas" items="${peliculas}">
+        <option value="${peliculas.titulo}">${peliculas.titulo}</option>
+        
+        </c:forEach>
+	  </select>
+			<input type="submit" name="submit1" value="enviar">
 
-			</c:forEach>
 
-
-
-			<input type="submit" name="submit" value="enviar">
-			<input type="reset" name="reset" value="borrar datos">
-
-		</select>
 
 	</form>
 

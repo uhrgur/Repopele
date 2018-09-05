@@ -28,7 +28,7 @@ public class Dao{
         try {
 
         	con = ConexionDB.getConection();
-            pst = con.prepareStatement("SELECT * FROM peliculas WHERE titulo = " + pelele + ";");
+            pst = con.prepareStatement("SELECT * FROM peliculas WHERE titulo = '" + pelele + "';");
             rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -115,7 +115,7 @@ public class Dao{
                     System.out.println(nombre);
 
                     x.add(new Pelicula(titulo, descripcion, trailer, puntuacion, categoria, ano, precio, portada));
-                    System.out.println(x);
+                   // System.out.println(x);
 
                 }
 
@@ -164,6 +164,7 @@ public class Dao{
             String tra = pelicula.getTrailer();
 
             String query = Q.getqModificarPelicula(elm, tit, desc, tra, punt, cat, ano, precio, port);
+            System.out.println("La query modificar que se ejecuta es: " + query);
             Connection con = null;
             PreparedStatement pst = null;
             boolean rs = false;
