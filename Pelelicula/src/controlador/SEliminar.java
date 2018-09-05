@@ -15,6 +15,7 @@ import datos.Dao;
 import model.Pelicula;
 
 /**
+ * @author Edgar Arabaolaza
  * Servlet implementation class SEliminar
  */
 @WebServlet("/SEliminar")
@@ -24,27 +25,50 @@ public class SEliminar extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
+
 	public SEliminar() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
-		if (request.getParameter("flag") != null ) {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {		// --------------------
+		// Atributos
+		// --------------------
+
+		/**
+		 * L�gica para decidir dispatcher.
+		 *
+		 * @param flag
+		 * 			  Se verifica si existe la variable "flag"
+		 *
+		 * @param titulo
+		 *            Se guarda aqu� la pel�cula a eliminar.
+		 *
+		 */
+
+		if (request.getParameter("flag") != null) {
 			String titulo = request.getParameter("borrar");
-			
+
 			Dao.daoEliminarPelicula(titulo);
 
 			RequestDispatcher view = request.getRequestDispatcher("SMostrar");
 			view.forward(request, response);
-		} else {
+		}
+
+		/**
+		 * Si no se ha realizado el formulario:
+		 *
+		 * @param lista
+		 *            Recoge la informaci�n de la base de datos y la env�a a eliminar.jsp.
+		 *
+		 */
+
+		else {
 			List<Pelicula> lista = new ArrayList<Pelicula>();
 			lista = Dao.daoLista();
 			request.setAttribute("peliculas", lista);
@@ -57,9 +81,9 @@ public class SEliminar extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
